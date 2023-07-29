@@ -17,9 +17,3 @@ font で囲む<font color="yellow">黄色</font>になる
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | name   | string | null: false |
-
----
-
----
-
-考えていること
