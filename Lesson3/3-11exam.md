@@ -65,20 +65,20 @@ H.電子メールを受信する
 
 - 9.TCP / IPアプリケーション層プロトコルの表
 
-|ポート番号|プロトコル    |TCP / IP|
-|--------|-------------|--------|
-|20, 21  |FTP, FTP-Data|A       |
-|22      |B            |TCP     |
-|C       |Telnet       |TCP     |
-|25      |D            |TCP     |
-|53      |E            |TCP, UDP|
-|67, 68  |F            |UDP     |
-|69      |TFTP         |G       |
-|80      |H            |TCP     |
-|I       |POP3         |TCP     |
-|123     |J            |UDP     |
-|161, 162|K            |UDP     |
-|L       |HTTPS        |TCP     |
+|ポート番号|プロトコル    |TCP / UDP|
+|--------|-------------|---------|
+|20, 21  |FTP, FTP-Data|A        |
+|22      |B            |TCP      |
+|C       |Telnet       |TCP      |
+|25      |D            |TCP      |
+|53      |E            |TCP, UDP |
+|67, 68  |F            |UDP      |
+|69      |TFTP         |G        |
+|80      |H            |TCP      |
+|I       |POP3         |TCP      |
+|123     |J            |UDP      |
+|161, 162|K            |UDP      |
+|L       |HTTPS        |TCP      |
 
 ---
 回答  
@@ -104,12 +104,27 @@ pingはTCP上で動作するネットワーク診断プロトコル:ICMP上で�
 5.UDPには含まれない  
 A.シーケンス番号  
 C.確認応答番号  
-F.プロトコル  
+E.制御ビット  
+いずれもTCPが信頼性を提供するための機能。プロトコルと宛先IPアドレスはIPヘッダに含まれている
 
 6  
+A.SYN, ACK  
+SYNは確立要求、ACKは確認応答。1回目はSYNのみ、2回目はSYNとACK、3回目はACKのみがオンになる
 
 7  
 
 8  
 
 9  
+A:TCP  
+B:SSH  
+C:23  
+D:SMTP  
+E:DNS  
+F:DHCP  
+G:UDP  
+H:HTTP  
+I:110  
+J:NTP  
+K:SNMP  
+L:443:
