@@ -112,6 +112,17 @@ A.SYN, ACK
 SYNは確立要求、ACKは確認応答。1回目はSYNのみ、2回目はSYNとACK、3回目はACKのみがオンになる
 
 7  
+1.G  
+送信元レイヤ2:ホストAのMACアドレス  
+レイヤ3:ホストAのIPアドレス  
+宛先レイヤ2:ルータFa0のMACアドレス  
+レイヤ3:サーバのIPアドレス
+
+2.E
+送信元レイヤ2:ルータFa1のMACアドレス  
+レイヤ3:ホストAのIPアドレス  
+宛先レイヤ2:サーバのMACアドレス  
+レイヤ3:サーバのIPアドレス
 
 8  
 1.TFTP:D.コネクションレス型のファイル転送を行う  
@@ -133,4 +144,19 @@ H:HTTP
 I:110  
 J:NTP  
 K:SNMP  
-L:443:
+L:443
+
+|ポート番号|プロトコル    |TCP / UDP|
+|--------|-------------|---------|
+|20, 21  |FTP, FTP-Data|TCP      |
+|22      |SSH          |TCP      |
+|23      |Telnet       |TCP      |
+|25      |SMTP         |TCP      |
+|53      |DNS          |TCP, UDP |
+|67, 68  |DHCP         |UDP      |
+|69      |TFTP         |UDP      |
+|80      |HTTP         |TCP      |
+|110     |POP3         |TCP      |
+|123     |NTP          |UDP      |
+|161, 162|SNMP         |UDP      |
+|443     |HTTPS        |TCP      |
