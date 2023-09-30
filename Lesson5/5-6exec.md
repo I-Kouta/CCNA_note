@@ -105,6 +105,11 @@ A.ルータとPCには同じサブネットのIPアドレスを設定してお�
 B.ターミナルソフトのシリアルポート設定でボーレートを14,400にする必要がある  
 
 2  
+1.ルーティングプロトコルの設定 => C.`(config-router)#`  
+2.設定した全ての情報を見る => A.`#`  
+3.デバイス全体に関わる設定 => D.`(config)#`  
+4.一部の情報のみ表示でき、pingやtelnetを実行 => E.`>`  
+5.コンソールやVTYを行う => B.`(config-line)#`
 
 3.特権EXECモードへ移行するコマンド  
 B.`Router(config)#exit`  
@@ -119,6 +124,8 @@ G.`Router>exec`:execというコマンドは存在しない
 H.`Router(config-if)#exit`:インターフェイスコンフィギュレーションモードからグローバルコンフィギュレーションモードに戻る
 
 4  
+C.eと入力したあとに続けて?キーを押す  
+これでeから始まるコマンドのリストが表示される
 
 5.少し前に実行したコマンドを実行する  
 B.↑キーを押す  
@@ -127,7 +134,8 @@ D.Ctrl + Pキーを押す
 6.pingコマンドを実行する  
 E.ユーザEXECモードと特権EXECモード
 
-7  
+7.「% Incomplete command」というメッセージが表示されたときの原因  
+D.コマンドが不完全である
 
 8  
 A.特権EXECモードでのみ実行できる  
@@ -139,8 +147,21 @@ E.拡張pingが成功した場合、*(アスタリスク)が表示される:成�
 9.はルータのホスト名を変更し、ルータを再起動したときに変更した内容が自動的に反映されるコマンド  
 B.`#copy running-config startup-config`  
 
-10  
+10.ルータを再起動したときに自動的に読み込まれる設定を確認するコマンド  
+D.`show startup-config`
 
-11  
+11.Catalyst Switchを工場出荷時の状態を戻すために必要なコマンドを3つ  
+A.`#reload`:2.システムの再起動  
+E.`#delete vlan.dat` :3.vlan.datの削除(または`delete flash:vlan.dat`)  
+F.`#erase startup-config`:1.startup-configの削除  
+
+B.`#exit`:管理アクセスをログアウト  
+C.`#erase flash:vlan.dat`:eraseではなくdeleteなら可  
+D.`#delete startup-config`:deleteではなくeraseなら可  
+G.`#erase running-config`:現在の設定情報なのでeraseやdeleteで削除できない  
+H.`#system reload`:存在しない
 
 12  
+`RT1#copy startup-config running-config`  
+`%% Non-volatile configuration memory invalid or not present`  
+B.コピー元とコピー先の指定が誤っている=> コピー元、コピー先の順で指定する  
