@@ -116,7 +116,7 @@ E.`Router>enable`
 I.`Router(config-if)#end`
 
 A.`Router#exec`:execというコマンドは存在しない  
-C.`Router#enable`#だと不可。ユーザEXECモード(>)からenableコマンドを実行することが可能(B)  
+C.`Router#enable`:#だと不可。ユーザEXECモード(>)からenableコマンドを実行することが可能(E)  
 D.`Router#configure terminal`:特権EXECモードからグローバルコンフィギュレーションモードへの移行  
 F.`Router#disable`:特権EXECモードからユーザEXECモードへ移行  
 G.`Router>exec`:execというコマンドは存在しない  
