@@ -72,3 +72,16 @@ C.`(config-if)#speed 100000`
 D.`(config-if)#speed 100`  
 E.`(config-if)#mode full`  
 F.`(config-if)#duplex full`
+
+---
+回答  
+1.LEDがグリーンに点灯している  
+C.スイッチが正常に動作している
+
+2.「*Would you like to enter the initial configuration dialog? [yes / no]:*」の説明  
+A.yesを選択するとセットアップモードが開始される  
+C.NVRAMにコンフィギュレーションファイルが存在しない
+
+3.スイッチにIPアドレスを設定する理由2つ  
+B.リモートからスイッチに管理アクセスするため  
+C.SNMPでスイッチの情報収集や監視を行うため
