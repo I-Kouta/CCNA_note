@@ -85,3 +85,19 @@ C.NVRAMにコンフィギュレーションファイルが存在しない
 3.スイッチにIPアドレスを設定する理由2つ  
 B.リモートからスイッチに管理アクセスするため  
 C.SNMPでスイッチの情報収集や監視を行うため
+
+4.CatalystスイッチにIPアドレスを割り当てて管理  
+I.`(config)#interface vlan 1`  
+`(config-if)#ip address`  
+A.`(config)#no shutdown`
+
+5  
+6  
+7  
+8  
+9.スイッチポートを全二重で速度を100Mbpsに固定する  
+D.`(config-if)#speed 100`  
+A.`(config-if)#bandwidth 100`  
+B.`(config-if)#full duplex`  
+E.`(config-if)#mode full`  
+F.`(config-if)#duplex full`
