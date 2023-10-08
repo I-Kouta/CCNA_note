@@ -32,7 +32,7 @@ E.`(config)#interface fastethernet 0`
 `(config-if)#no shutdown`
 
 - 4.`show version`コマンドで確認できないものを選択  
-A。DRAMの容量  
+A.DRAMの容量  
 B.インターフェイスの種類と数  
 C.稼働中のIOSの格納場所とファイル名  
 D.コンフィギュレーションレジスタ量  
@@ -65,6 +65,7 @@ E.「*FastEthernet0 is up, line protocol is up*」と表示されるとき、対
 
 3
 
-4
+4.`show version`コマンドで確認できないもの  
+E.CPU使用率 => `show processes`コマンドを使用する
 
 5
