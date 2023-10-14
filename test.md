@@ -35,3 +35,13 @@ MACアドレス:001b.5492.1234
 MACアドレステーブルからエントリを削除されないようにするにはエントリを手動で登録する。  
 スタティックMACアドレステーブル登録(永続的に保持される):  
 `(config)#mac address-table static <mac-address> vlan interface`
+
+---
+・ルーティングテーブルを確認するコマンド  
+`show ip route`  
+ユーザEXECモードまたは特権EXECモードで使用する
+
+---
+・VLAN2をSalesという名前で作成するコマンド  
+`(config)#vlan 2 (config-vlan)#name Sales`  
+グローバルコンフィギュレーションモードでvlanコマンドを使用する。上記だと、2とSalesを指定している
