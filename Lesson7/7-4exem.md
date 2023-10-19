@@ -60,6 +60,7 @@ C.ルータのコンフィギュレーションレジスタが0x2102のとき、
 D.FastEthernet0インターフェイスでno shutdownコマンドを実行し、ステータスが「*FastEthernet0 is down, line protocol is down*」と表示されるとき、ケーブルが接続されていない可能性がある
 
 A.「*administratively down, line protocol is down*」 => 管理的に無効化されている  
+B.FastEthernet0インターフェイスでshutdownコマンドを実行すると、ステータスは「*FastEthernet0 is down, line protocol is down*」と表示される =>*administratively down*が正しい  
 C.「*FastEthernet0 is up, line protocol is down*」と表示されるとき、物理層は正常であるがネットワーク層に問題があることを示している => 物理層は正常、データリンク層が正常に動作していない  
 E.「*FastEthernet0 is up, line protocol is up*」と表示されるとき、対向デバイスに対するpingは成功する => ネットワーク層以上の通信は接続性を確認してみないと分からない
 
