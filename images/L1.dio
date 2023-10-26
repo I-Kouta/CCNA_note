@@ -503,71 +503,71 @@
         </mxGraphModel>
     </diagram>
     <diagram id="I30jzJrcAH5cAoLKbVcq" name="L3スイッチのポート構成">
-        <mxGraphModel dx="778" dy="1043" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="739" dy="991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-1" value="L2ポート" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-1" value="L2ポート" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="120" width="80" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-2" value="L3ポート" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-2" value="L3ポート" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="440" width="80" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-4" value="" style="line;strokeWidth=1;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-4" value="" style="line;strokeWidth=1;html=1;" parent="1" vertex="1">
                     <mxGeometry x="240" y="135" width="120" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-5" value="物理ポート(スイッチポート)" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-5" value="物理ポート(スイッチポート)" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="361" y="120" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-6" value="" style="line;strokeWidth=1;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-6" value="" style="line;strokeWidth=1;html=1;" parent="1" vertex="1">
                     <mxGeometry x="520" y="135" width="120" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-7" value="アクセスポート:1つのVLANのみ送受信" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-7" value="アクセスポート:1つのVLANのみ送受信" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="640" y="120" width="240" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-8" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-8" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" parent="1" vertex="1">
                     <mxGeometry x="560" y="140" width="80" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-9" value="トランクポート:複数のVLANのみ送受信" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-9" value="トランクポート:複数のVLANのみ送受信" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="640" y="220" width="240" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-10" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-10" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" parent="1" vertex="1">
                     <mxGeometry x="281" y="140" width="79" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-11" value="論理ポート" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-11" value="論理ポート" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="361" y="280" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-12" value="" style="line;strokeWidth=1;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-12" value="" style="line;strokeWidth=1;html=1;" parent="1" vertex="1">
                     <mxGeometry x="520" y="295" width="120" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-13" value="L2 Port-Channel(EtherChannel)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-13" value="L2 Port-Channel(EtherChannel)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="640" y="280" width="240" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-14" value="" style="line;strokeWidth=1;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-14" value="" style="line;strokeWidth=1;html=1;" parent="1" vertex="1">
                     <mxGeometry x="241" y="455" width="120" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-15" value="物理ポート(ルーティッドポート):ルータインターフェイスのように使用" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-15" value="物理ポート(ルーティッドポート):ルータインターフェイスのように使用" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="360" y="440" width="400" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-16" value="論理ポート" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-16" value="論理ポート" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="360" y="560" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-17" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-17" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" parent="1" vertex="1">
                     <mxGeometry x="282" y="459" width="79" height="121" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-18" value="" style="line;strokeWidth=1;html=1;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-18" value="" style="line;strokeWidth=1;html=1;" parent="1" vertex="1">
                     <mxGeometry x="521" y="575" width="120" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-19" value="SVI:VLANごとにルーティング" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-19" value="SVI:VLANごとにルーティング" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="641" y="560" width="240" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-20" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-20" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=0;right=0;fillColor=none;strokeWidth=1;direction=north;" parent="1" vertex="1">
                     <mxGeometry x="560" y="580" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-21" value="L3 Port-Channel(EtherChannel)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-21" value="L3 Port-Channel(EtherChannel)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="641" y="640" width="240" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="fBHLoxGffJnGP5jhWSlQ-22" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;strokeColor=default;strokeWidth=1;direction=south;" vertex="1" parent="1">
+                <mxCell id="fBHLoxGffJnGP5jhWSlQ-22" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;strokeColor=default;strokeWidth=1;direction=south;" parent="1" vertex="1">
                     <mxGeometry x="120" y="135" width="40" height="325" as="geometry"/>
                 </mxCell>
             </root>
