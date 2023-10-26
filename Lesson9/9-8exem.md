@@ -63,7 +63,7 @@ B.`show interfaces switchport`
 C.`show vlan brief`  
 D.`show interfaces vlan`  
 E.`show trunk status`  
-F.`show interfaces  capabilities`
+F.`show interfaces capabilities`
 
 - 9.ホストAとホストB間で通信できない。解決するために必要なデバイスを2つ選択  
 VLAN2 --- Switch --- VLAN3  
@@ -130,11 +130,18 @@ C.IEEE 802.1Q:IEEE標準のトランクプロトコル
 D.ISL:シスコ独自のトランクプロトコル  
 E.CDP:隣接するCiscoデバイスの情報を収集できるプロトコル
 
-7.Catalyst 3560スイッチと他ベンダ製のスイッチ間をトランクポートとして設定する時にCatalystスイッチで必要なコマンド
+7.Catalyst 3560スイッチと他ベンダ製のスイッチ間をトランクポートとして設定する時にCatalystスイッチで必要なコマンド  
+A.`(config-if)#switchport mode trunk`:トランクポートの設定  
+F.`(config-if)#switchport trunk encapsulation dot1q`:トランクプロトコルの設定
 
+8.トランクポートの設定を確認できるコマンドを3つ  
+A.`show interfaces trunk`  
+B.`show interfaces switchport`  
+C.`show vlan brief`:Ports部分にインターフェイス名が表示されなければトランクポートとして動作している
 
-8.トランクポートの設定を確認できるコマンドを3つ
-
+D.`show interfaces vlan`:VLAN管理インターフェイスの情報表示  
+E.`show trunk status`:存在しない  
+F.`show interfaces capabilities`:スイッチでサポートしている機能(トランクプロトコルなど)を確認する
 
 9.ホストAとホストB間で通信できない。解決するために必要なデバイス
 
