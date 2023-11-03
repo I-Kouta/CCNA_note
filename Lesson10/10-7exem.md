@@ -59,7 +59,7 @@ C.`(config)#interface fa0/1`
 D.`(config)#interface fa0/1`  
 `(config-if)#access-group 10 in`  
 E.`(config)#interface fa0/1`  
-`(config-if)#ip access-group 10 in`  
+`(config-if)#ip access-group 10 in`
 
 - 9.ルータのインターフェイスに適用したアクセスリストの方向を確認できるコマンド  
 A.`show interfaces`  
@@ -96,22 +96,37 @@ D.任意の指定をするとき、ワイルドカードマスクは全て1を�
 
 IPアドレスのどの部分をチェックするかと指定する。0を指定すると対応するビットをチェックし、1を指定すると無視する
 
-4.標準ACLの説明
+4.標準ACLの説明  
+C.ワイルドカードマスクを省略すると0.0.0.0が適用される  
+E.条件に宛先IPアドレスを含めることはできない => 送信元IPアドレスだけを指定できる
 
 5.`access-list 10 permit 172.16.1.1`と同じ意味をもつものを2つ  
 A.`access-list 10 permit host 172.16.1.1` => 172.16.1.1 0.0.0.0と同じ意味  
 C.`access-list 10 permit 172.16.1.1 0.0.0.0` => 0.0.0.0が省略されている  
 
-B.`access-list 10 permit ip 172.16.1.1`  
-D.`access-list 10 permit 172.16.1.1 255.255.255.255`  
 E.`access-list 10 permit any` => 全てのパケットを許可する
 
-6.アクセスリストの適用場所
+6.アクセスリストの適用場所  
+A.標準アクセスリストの場合、宛先近くに配置する  
+D.拡張アクセスリストの場合、送信元近くに配置する
 
-7.172.16.20.0 / 24を指定するワイルドカードマスク
+標準アクセスリストはパケットの送信元アドレスをチェックする。そのため送信元近くに配置をすると意図しないコンピュータにもアクセスが出来なくなる可能性がある
 
-8.ルータのFa0 / 1インターフェイスでパケットを着信したとき、ACL10と照合させる
+7.172.16.20.0 / 24を指定するワイルドカードマスク  
+D.0.0.0.255
 
-9.アクセスリストの方向を確認できる
+8.ルータのFa0 / 1インターフェイスでパケットを着信したとき、ACL10と照合させる  
+E.`(config)#interface fa0/1`  
+`(config-if)#ip access-group 10 in`
 
-10.ACLの条件に一致したパケットを消去する
+9.アクセスリストの方向を確認できる  
+B.`show ip interface`
+
+A.`show interfaces`:インターフェイスの詳細情報を表示  
+C.`show access-lists`:全てのACL(ステートメント)を表示  
+D.`show ip route`:ルーティングテーブルを表示
+
+10.ACLの条件に一致したパケットを消去する  
+B.`#clear access-list counters`
+
+A.`(config)#no access-list <acl-number>`:アクセスリストを削除  
