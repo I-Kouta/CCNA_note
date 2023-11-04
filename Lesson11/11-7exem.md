@@ -58,7 +58,7 @@ E.`show nat table`
 - 9.ルータに設定したスタティックルートNATのコマンド  
 出力内容:  
 `RT1#show ip nat translation`  
-Inside global:100.150.200.1 Inside local:192.168.1.1
+Inside global:100.150.200.1 Inside local:192.168.1.1  
 A.`ip nat inside source static 192.168.1.1 100.150.200.1`  
 B.`ip nat pool static 192.168.1.1 100.150.200.1`  
 C.`ip nat outside source static 192.168.1.1 100.150.200.1`  
