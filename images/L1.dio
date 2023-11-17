@@ -867,7 +867,7 @@
                         <mxRectangle width="120" height="40" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="rnPcVs759lAqgnUYAmhj-75" value="この場合のコマンド↓&lt;br style=&quot;font-size: 16px;&quot;&gt;&lt;font color=&quot;#33ffff&quot;&gt;select&lt;/font&gt; users.name, users.birth_year, prefectures.prefecture &lt;font color=&quot;#33ffff&quot;&gt;from&lt;/font&gt; users &lt;font color=&quot;#33ffff&quot;&gt;join&lt;/font&gt; prefectures&amp;nbsp;&lt;font color=&quot;#33ffff&quot;&gt;on&lt;/font&gt; users.prefecture_id = prefecture.id;" style="text;html=1;strokeColor=#33FFFF;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;horizontal=1;" parent="1" vertex="1">
+                <mxCell id="rnPcVs759lAqgnUYAmhj-75" value="この場合のコマンド↓&lt;br style=&quot;font-size: 16px;&quot;&gt;&lt;font color=&quot;#33ffff&quot;&gt;select&lt;/font&gt; users.name, users.birth_year, prefectures.prefecture &lt;font color=&quot;#33ffff&quot;&gt;from&lt;/font&gt; users &lt;font color=&quot;#33ffff&quot;&gt;join&lt;/font&gt; prefectures&amp;nbsp;&lt;font color=&quot;#33ffff&quot;&gt;on&lt;/font&gt; users.prefecture_id = prefectures.id;" style="text;html=1;strokeColor=#33FFFF;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;horizontal=1;" parent="1" vertex="1">
                     <mxGeometry x="41" y="761" width="919" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="rnPcVs759lAqgnUYAmhj-76" value="" style="endArrow=classic;startArrow=classic;html=1;fontSize=16;" parent="1" edge="1">
