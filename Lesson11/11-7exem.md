@@ -80,6 +80,7 @@ D.`debug ip nat translations`
 E.`show ip nat`
 
 ---
+回答  
 1.ルータのインターフェイスにIPアドレスを動的に割り当てるコマンド  
 B.`(config-if)#ip address dhcp`
 

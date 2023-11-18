@@ -76,6 +76,7 @@ D.`#delete access-list counters`
 E.`(config)#no access-list counters`
 
 ---
+回答  
 1.アクセスリストの説明の誤り  
 E.アクセスリストによって、ルータへのウイルス侵入を防止できる  
 

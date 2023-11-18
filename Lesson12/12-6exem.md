@@ -79,6 +79,7 @@ D.`(config-if)#ip rip default-information originate`
 E.`(config-router)#rip update default-route originate`
 
 ---
+回答  
 1.RIPv2で正しいもの4つ  
 A.トポロジに変更があった場合、即時にアップデートを送信する => トリガードアップデート  
 D.自動経路集約はデフォルトで有効化されている  
