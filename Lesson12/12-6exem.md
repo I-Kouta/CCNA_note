@@ -108,12 +108,34 @@ Invalid after 180 seconds, hold down 180, flushed after 240
 
 Sendingが30s、Invalidが180s、Hold downが180s、Flushed afterが240s
 
-5.ルーティングプロトコルのHelloメッセージが送信できない原因
+5.ルーティングプロトコルのHelloメッセージが送信できない原因  
+D.インターフェイスにpassive-interfaceを設定している
 
-6.全てのアクティブなインターフェイス上でRIPv2を有効化するコマンド5つ
+OSRFやEIGRP(ディスタンスベクター型のルーティングプロトコル)では、Helloパケットも送信されない。RIPはディスタンスベクター型であり、Helloパケットは使用しない  
 
-7.RIPのアップデートの送信を抑制するコマンド
+6.全てのアクティブなインターフェイス上でRIPv2を有効化するコマンド5つ  
+B.`(config-router)#network 10.0.0.0`  
+E.`(config-router)#network 172.31.0.0`  
+F.`(config)#router rip` => 1.RIPプロセスの有効化のためルータコンフィギュレーションモードに移行する  
+H.`(config-router)#version 2` => 2.RIPバージョン2の有効化  
+J.`(config-router)#network 192.168.13.0`  
 
-8.自動経路集約を無効化するコマンド
+クラスフルなネットワークアドレス(ホスト部が0)である必要がある。
+C.`(config-router)#network 172.31.20.0` => 20が不適切  
+D.`(config-router)#network 192.168.7.0`  
+G.`(config-router)#network 192.168.0.0` => ホスト部は24ビット  
+I.`(config-router)#no auto-summary`  
+アドレスクラス:  
+クラスA:先頭が**0**でネットワーク部は8ビット, クラスB:先頭は**10**でネットワーク部は16ビット, クラスC:先頭は**110**でネットワーク部は32ビット, クラスD:先頭は**1110**で同一ネットワークでのみ送信されルータで転送されない
 
-9.RIPのアップデートでデフォルトルートを配布する
+7.RIPのアップデートの送信を抑制するコマンド  
+E.`(config)#router rip`:ルータコンフィギュレーションモードに移行  
+`(config-router)#passive-interface fa0/1`:先頭にipはつかない
+
+8.自動経路集約を無効化するコマンド  
+D.`(config-router)#no auto-summary`
+
+C.`(config-router)#auto-summary`:自動経路集約を有効化する
+
+9.RIPのアップデートでデフォルトルートを配布する  
+B.`(config-router)#default-information originate`
