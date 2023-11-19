@@ -123,7 +123,7 @@ J.`(config-router)#network 192.168.13.0`
 
 クラスフルなネットワークアドレス(ホスト部が0)である必要がある。  
 C.`(config-router)#network 172.31.20.0` => 20が不適切  
-D.`(config-router)#network 192.168.7.0`  
+D.`(config-router)#network 192.168.7.0` => 管理的に無効になっている(クラスフルネットワークアドレスにはなっている)  
 G.`(config-router)#network 192.168.0.0` => ホスト部は24ビット  
 I.`(config-router)#no auto-summary`  
 アドレスクラス:  
