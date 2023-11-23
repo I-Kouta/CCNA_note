@@ -37,18 +37,10 @@ E.`R1(config)#default route 0.0.0.0.0.0.0.0 s0/0`
 
 - 6.2台のルータ間で使用されるルーティングプロトコルを選択  
 R1(AS65000)---ISP(AS65100)  
-A.EIGRP  
-B.RIPv2P  
-C.OSRF  
-D.IS-IS  
-E.BGP
+A.EIGRP B.RIPv2P C.OSRF D.IS-IS E.BGP
 
 - 7.デフォルトのアドミニストレーティブディスタンス値が最小のプロトコル  
-A.OSRF  
-B.IBGP  
-C.RIP  
-D.IS-IS  
-E.EIGRP
+A.OSRF B.IBGP C.RIP D.IS-IS E.EIGRP
 
 - 8.プライマリ回線がダウンした場合にだけ使用できるスタティックルートの実装を選択  
 A.フローティングスタティックルート  
@@ -88,19 +80,13 @@ B.`ISP(config)#ip route 0.0.0.0.0.0.0.0 1.1.1.2`:デフォルトルートを特�
 R1(AS65000)---ISP(AS65100)  
 E.BGP
 
-A.EIGRP  
-B.RIPv2P  
-C.OSRF  
-D.IS-IS  
+A.EIGRP B.RIPv2P C.OSRF D.IS-IS  
 異なるASに所属する2台のルータ間で経路情報を交換する場合、AS間のルーティングを行うEGPプロトコルを使用する。A ~ DはいずれもAS内のルーティングを行うプロトコル。
 
 7.デフォルトのアドミニストレーティブディスタンス値が最小のプロトコル  
 E.EIGRP(90)
 
-A.OSRF(110)  
-B.IBGP(200)  
-C.RIP(115)  
-D.IS-IS(115)  
+A.OSRF(110) B.IBGP(200) C.RIP(115) D.IS-IS(115)
 
 8.プライマリ回線がダウンした場合にだけ使用できるスタティックルートの実装を選択  
 A.フローティングスタティックルート
