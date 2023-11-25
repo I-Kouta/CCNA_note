@@ -41,7 +41,7 @@ A.`switchport port-security mac-address static`
 B.`switchport port-security mac-address dynamic`  
 C.`switchport port-security violation protect`  
 D.`switchport port-security source-address protect`  
-E.`switchport port-security mad-address sticky`  
+E.`switchport port-security mad-address sticky`
 
 ---
 回答  
@@ -52,7 +52,7 @@ E.`switchport port-security mad-address sticky`
 `RT1(config-line)#password CCNA` => TelnetでVTYへリモートログインする際に入力する必要がある  
 C.Sanfran
 
-2.出力から正しい説明を4つ, 567, 576, 588  
+2.出力から正しい説明を4つ  
 A.RT1にパスワード入力なしでリモートログインすることができる => VTYのline設定の「no login」  
 D.コンソールポートを使用してログインする際に、ユーザ名とパスワードを要求される => コンソールポートのline設定に「login local」とあれば、`username`コマンドで設定されたユーザ名とパスワードが必要  
 F.`show running-config`コマンドを実行した出力結果 => Current configuration  
@@ -69,6 +69,13 @@ A.`running-config`にある全てのパスワードが暗号化されている
 
 既に設定されたパスワード、これから設定するパスワードのどちらも全て暗号化される。デフォルトでは有効になっておらず、noコマンドを実行してもプレーンテキストは復元されず、新たに設定したパスワードは暗号化されなくなる。
 
-4.管理者がスイッチにポートセキュリティを設定する目的
+4.管理者がスイッチにポートセキュリティを設定する目的  
+C.許可していないホストがLANへアクセスするのを防ぐため
 
-5.ポートセキュリティを設定したスイッチポートに対して、受信フレームの送信元MACアドレスを動的に`running-config`に保存するためのコマンド
+許可したMACアドレスからのフレームを転送し、それ以外のMACアドレスからのフレームをブロックしてLANへのアクセスを防ぐことができる。  
+D.許可していない宛先MACアドレスへの通信を防ぐため => フレームの宛先MACアドレスは感知しない
+
+5.ポートセキュリティを設定したスイッチポートに対して、受信フレームの送信元MACアドレスを動的に`running-config`に保存するためのコマンド  
+E.`switchport port-security mac-address sticky` => スティッキーラーニングを有効にする
+
+C.`switchport port-security violation protect` => セキュリティ違反が発生した時の違反モードをprotectに変更する
