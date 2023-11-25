@@ -45,11 +45,29 @@ E.`switchport port-security mad-address sticky`
 
 ---
 回答  
-1.再びRT1にアクセスしてユーザEXECモードから特権モードに移行する際に必要となるパスワード
+1.再びRT1にアクセスしてユーザEXECモードから特権モードに移行する際に必要となるパスワード  
+`RT1(config)#enable password Cisco` => これは上書きされる  
+`RT1(config)#enable secret Sanfran`  
+`RT1(config)#line vty 0 4`  
+`RT1(config-line)#password CCNA` => TelnetでVTYへリモートログインする際に入力する必要がある  
+C.Sanfran
 
-2.出力から正しい説明を4つ
+2.出力から正しい説明を4つ, 567, 576, 588  
+A.RT1にパスワード入力なしでリモートログインすることができる => VTYのline設定の「no login」  
+D.コンソールポートを使用してログインする際に、ユーザ名とパスワードを要求される => コンソールポートのline設定に「login local」とあれば、`username`コマンドで設定されたユーザ名とパスワードが必要  
+F.`show running-config`コマンドを実行した出力結果 => Current configuration  
+H.Fa0インターフェイスは管理的に有効化されている => 無効であれば`shutdown`が表示されている
 
-3.`service password-encryption`コマンドを実行したときの説明で正しいもの
+B.`show startup-config`コマンドを実行した出力結果 => `running-config`  
+C.RT1にTelnetまたはSSHでリモートログインできる =>  telnetのみ  
+E.バナーメッセージの設定によってセキュリティが強化されている => welcomeは非推奨。強化はされていない  
+G.RT1に同時に最大4台のPCからTelnet接続できる => 0 ~ 4の5台  
+I.ユーザEXECモードから特権EXECモードへ移行する時、パスワードは「\$1$d8nC…」を入力する必要がある => これは暗号化された結果(`enable secret`コマンド)
+
+3.`service password-encryption`コマンドを実行したときの説明で正しいもの  
+A.`running-config`にある全てのパスワードが暗号化されている
+
+既に設定されたパスワード、これから設定するパスワードのどちらも全て暗号化される。デフォルトでは有効になっておらず、noコマンドを実行してもプレーンテキストは復元されず、新たに設定したパスワードは暗号化されなくなる。
 
 4.管理者がスイッチにポートセキュリティを設定する目的
 
