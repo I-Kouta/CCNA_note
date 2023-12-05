@@ -43,3 +43,29 @@ C.`service timestamps debug datetime msec`
 A.`service timestamps log datetime msec` => ログメッセージのタイムスタンプ  
 B.`service timestamps log datetime localtime`  
 D.`service timestamps debug datetime localtime`
+
+---
+5.R1ルーターとR2ルーターが通信できていないため、システム管理者がR1 / R2で`show int s0/0/0`で状況を確認した。通信ができない原因を1つ選択
+
+<img width="700" alt="" src="./images/test3/問題5.png">
+
+A.カプセル化タイプの設定誤り
+
+B.リンクの信頼性が低すぎる  
+C.IPアドレスの設定誤り  
+D.帯域幅設定が不足している  
+E.サブネットマスクの誤り  
+F.loopbackが設定されていない
+
+インターフェイスが正常に動作しているかは`show interface`コマンドや`show ip interface brief`コマンドのStatusとProtocolで判断できる。~ is up, line protocol is downの場合は「ローカルとリモートのルータ設定の誤り」「ケーブル上のタイミングの問題(ロック信号)」「CSU / DSU障害」「専用回線その他のキャリアサービスの問題」などの原因が考えられる。どちらもdownの場合はルータでCD信号を検出できておらず、「ハードウェア障害」「回線ダウン」「ケーブル接続障害」などがある。*administratively down*の場合は`shutdown`コマンドが有効になっている。
+
+---
+6.正しい拡張IPアクセスコントロールリストを選択  
+C.`access-list 150 permit tcp any host 192.168.1.1`
+
+A.`access-list 150 permit host 192.168.1.1`  
+B.`access-list 50 permit host 192.168.1.1`  
+D.`access-list 50 permit tcp any host 192.168.1.1`
+
+標準IPアクセスコントロールリストを作成する場合、アクセスリスト番号は1 ~ 99, 1300 ~ 1999までの範囲で指定する。標準アクセスコントロールリストでは、**アドレスとワイルドカードマスクの組み合わせはひとつだけ指定**する。  
+拡張IPアクセスコントロールリストを作成する場合、アクセスリスト番号は100 ~ 199, 2000 ~ 2699までの範囲を指定する。プロトコル名を指定した上で、**アドレスとワイルドカードマスクの組み合わせを2つ指定**する。最初のアドレスが送信元、次が宛先アドレス。
