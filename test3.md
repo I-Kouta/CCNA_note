@@ -61,7 +61,10 @@ OSI参照モデルの階層構造名:物理層、データリンク層、ネッ�
 
 <img width="700" alt="" src="./images/test3/問題8.png">
 
-E.`SwitchY(config)#ip default-gateway 192.168.2.254[]SwitchY(config)#interface fa0/24[]SwitchY(config-if)#ip address 192.168.2.253 255.255.255.0[]SwitchY(config-if)#no shutdown`
+E.`SwitchY(config)#ip default-gateway 192.168.2.254`  
+`SwitchY(config)#interface fa0/24`  
+`SwitchY(config-if)#ip address 192.168.2.253 255.255.255.0`  
+`SwitchY(config-if)#no shutdown`
 
 レイヤ2スイッチにIPアドレスを設定する場合、interface vlan 1に対してIPアドレスを設定する。レイヤ2スイッチのfa0 / 24のような各物理ポートにはIPアドレスを設定できない。またルータのようなIPルーティング機能は備わっていないため、別サブネットと通信を行うには、PCと同様にデフォルトゲートウェイを設定する必要があり、グローバルコンフィギュレーションモードで`ip default-gateway`コマンドで設定する。
 
