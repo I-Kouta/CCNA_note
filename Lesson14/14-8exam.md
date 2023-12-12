@@ -4,7 +4,7 @@ A.`(config)no cdp run`
 B.`(config-if)no cdp run`  
 C.`(config)no cdp enable`  
 D.`(config-if)no cdp enable`  
-E.`(config)cdp disable`  
+E.`(config)cdp disable`
 
 - 2.出力から、172.16.3.2に対するTelnetセッションの再開方法を選択  
 A.disconnect1コマンドを実行する  
@@ -84,13 +84,46 @@ E.`show license status`
 
 ---
 回答  
-1.CDPを無効化するコマンド2つ
+1.CDPを無効化するコマンド2つ  
+A.`(config)no cdp run` => デバイス全体でCDPを無効化  
+D.`(config-if)no cdp enable` => 特定インターフェイスのみCDPを無効化
 
-2.172.16.3.2に対するTelnetセッションの再開方法
+B.`(config-if)no cdp run` => モードが誤り  
+C.`(config)no cdp enable` => モードが誤り  
+E.`(config)cdp disable`
 
-3.debugコマンドを実行したところ何も表示されない場合の解消方法
+CDPはデフォルトで有効になっている。
 
-4.SW2に対してTelnet接続する必要がある。SW2のIPアドレスを調べることができるコマンド
+2.172.16.3.2に対するTelnetセッションの再開方法  
+C.resume1コマンドを実行する
+
+A.disconnect1コマンドを実行する => クライアントが中断しているセッションを切断することができる  
+B.Ctrl + Shift + 6コマンドを押した後、Xキーを押す => TelnetやSSHを中断することができる  
+D.Enterキーを押す => 直前のセッションが再開される(*が表示される)  
+E.session1コマンドを実行する => 不正
+
+クライアントは`show session`コマンドで中断中のセッション情報を確認できる。
+
+3.debugコマンドを実行したところ何も表示されない場合の解消方法  
+A.`terminal monitor` => ログメッセージやデバッグを表示する
+
+B.`logging synchronous` => コマンド入力の途中でメッセージが割り込まれたときにコマンドを再表示する  
+C.`no debug all` => 全てのデバッグ機能を無効にする  
+D.`show debug` => どのデバッグ機能が有効になっているか確認する  
+E.`show processes` => CPU使用率やプロセスに関する情報を表示する
+
+特権EXECモードからコマンドを実行する必要がある。
+
+4.SW2に対してTelnet接続する必要がある。SW2のIPアドレスを調べることができるコマンド  
+SW1 --- RT1(コンソール -- PC) --- SW2 --- RT2  
+E.`show cdp entry *`
+
+A.`show interfaces` => 自身のインターフェイス情報を表示  
+B.`show cdp interface` => CDPが有効なインターフェイスの情報を表示するコマンド  
+C.`show ip interface brief` => 自身のインターフェイスの要約情報を表示  
+D.`show cdp neighbors` => detailが不足。要約情報にはIPアドレスは含まれない
+
+隣接デバイスにIPアドレスが割り当てられている場合、CDPで取得した情報にはIPアドレスも含まれている。ただし、詳細情報でないといけない。`show cdp neighbors detail`でも可能。
 
 5.Ciscoルータに内蔵されているメモリの説明
 
