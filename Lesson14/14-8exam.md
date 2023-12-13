@@ -33,7 +33,7 @@ E.`show cdp entry *`
 2.ルータが稼働中、動作するために必要な多くの情報を格納している  
 3.電源をオフにしても内容が消えないメモリで、ルータの起動時に使用される設定を格納しておく  
 4.読み書きされるメモリで、ルータの電源をオフにしても内容は消えない  
-A.`runnning-config` B.ブートストラップ C.ROMモニタ D.ROM E.RAM F.`startup-config` G.Cisco IOSソフトウェア H.コンフィギュレーションレジスタ I.ルーティングテーブル J.NVRAM K.Flash L.POST
+A.`running-config` B.ブートストラップ C.ROMモニタ D.ROM E.RAM F.`startup-config` G.Cisco IOSソフトウェア H.コンフィギュレーションレジスタ I.ルーティングテーブル J.NVRAM K.Flash L.POST
 
 - 6.ルータの稼働中のコンフィギュレーションモードをサーバへバックアップすることができるコマンド  
 A.`copy tftp:startup-config`  
@@ -125,9 +125,31 @@ D.`show cdp neighbors` => detailが不足。要約情報にはIPアドレスは�
 
 隣接デバイスにIPアドレスが割り当てられている場合、CDPで取得した情報にはIPアドレスも含まれている。ただし、詳細情報でないといけない。`show cdp neighbors detail`でも可能。
 
-5.Ciscoルータに内蔵されているメモリの説明
+5.Ciscoルータに内蔵されているメモリの説明  
+1.ルータが起動するために必要なプログラムが格納されている  
+=> B.ブートストラップ, C.ROMモニタ, D.ROM L.POST  
+2.ルータが稼働中、動作するために必要な多くの情報を格納している  
+=>A.`running-config`, E.RAM, I.ルーティングテーブル  
+3.電源をオフにしても内容が消えないメモリで、ルータの起動時に使用される設定を格納しておく  
+=>F.`startup-config`, H.コンフィギュレーションレジスタ, J.NVRAM  
+4.読み書きされるメモリで、ルータの電源をオフにしても内容は消えない
+=> G.Cisco IOSソフトウェア, K.Flash
 
-6.ルータの稼働中のコンフィギュレーションモードをサーバへバックアップする
+ROM、フラッシュメモリ、NVRAM、RAMの４つのメモリが内蔵されている。  
+ROM:読み込み専用のメモリで、ルータの電源をオフにしても内容が消えない。  
+フラッシュメモリ:自由に読み書き可能で、ルータの電源をオフにしても内容は消えない。  
+RAN:読み書き可能だが、ルータの電源をオフにすると内容が消えてしまう。  
+NVRAM:不揮発性ランダムアクセスメモリ。電源を切っても内容が消えない。
+
+6.ルータの稼働中のコンフィギュレーションモードをサーバへバックアップする  
+E.`copy running-config tftp:`
+
+A.`copy tftp:startup-config` => startup-configは稼働中ではない  
+B.`copy startup-config tftp;` => startup-configは稼働中ではない  
+C.`copy running-config startup-config` => 稼働中の設定をNVRAMに保存する  
+D.`copy tftp:running-config` => 順番が反対
+
+特権EXECモードからcopyコマンドで「コピー元 コピー先」の順で指定する。
 
 7.ルータのコンフィギュレーションモードレジスタ
 
