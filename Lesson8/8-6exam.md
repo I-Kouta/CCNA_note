@@ -8,7 +8,7 @@ E.レイヤ2ヘッダを書き換えて転送する
 
 - 2.ルーティングテーブルを表示するためのコマンド  
 A.`show routing-table`  
-B.`show io router`  
+B.`show ip router`  
 C.`show ip routing`  
 D.`show ip route`  
 E.`show protocols`
