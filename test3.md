@@ -380,3 +380,22 @@ B.フローエクスポーター => NetFlowで収集したフロー情報を外�
 C.フローサンプラー => フロー情報を収集する頻度やモードを設定する
 
 Flexible NetFlowではフローの識別情報を自由に設定できる。
+
+---
+44.Ciscoルータではない接続先ルータとシリアル回線で接続設定する際、Ciscoルータに適切な設定コマンド
+
+A.`(config)#interface serial 0/0`  
+`(config-if)#ip address 172.16.1.1 255.255.255.252`  
+`(config-if)#encapsulation ppp`  
+`(config-if)#no shut`
+
+異なるベンダの機器をシリアル回線で接続するときにはPPPを利用することが一般的。カプセル化を指定しない場合、CiscoルータでデフォルトでHDLCが選択される。HDLCはベンダごとに仕様が異なるため他ベンダの製品化では使用できない。カプセル化プロトコルにフレームリレーを選択した際、フレームリレーのカプセル化タイプとしてieftとciscoがある。Ciscoルータではciscoがデフォルトで選択されるが、cisco以外のベンダのルータとは互換性がない。cisco以外のベンダとの接続には`encapsulation frame-relay ieft`でieftを明示的に指定する必要がある。
+
+---
+45.スイッチのインターフェイスのコマンドの説明で正しいもの  
+`Switch(config-if)#switchport port-security`  
+`Switch(config-if)#switchport port-security mac-address sticky`
+
+B.動的に学習したMACアドレスをrunning-configに保存する
+
+1行目で、インターフェイスのポートセキュリティ機能を有効にする。2行目で、そのポートで動的に学習したMACアドレスを自動的にrunning-configに保存する。startup-configにいは自動保存されないため、保存したい場合は手動で「copy running-config startup-config」を実行する必要がある。
