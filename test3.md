@@ -446,7 +446,7 @@ A.`(config-if)# ppp authentication chap pap`
 ---
 51.ルータにtelnetセッションを確立できない原因  
 
-<img width="800" alt="" src="./images/test3/問題51.png">
+<img width="500" alt="" src="./images/test3/問題51.png">
 
 C.VTYパスワードが設定されていない
 
