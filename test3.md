@@ -442,3 +442,16 @@ C.`boot system flash`コマンドが設定されていない
 A.`(config-if)# ppp authentication chap pap`
 
 シリアルリンクのカプセル化タイプがPPPの場合、オプションで認証の設定を行い、両方のルータで同じパスワードを設定している場合のみリンクアップできる。PAP(*Password Authentication Protocol*)はパスワードの暗号化はしないためセキュアではない。CHAP(*Challenge Handshake Authentication Protocol*)はハッシュ値を送信して認証を行う。対向の機器でCHAPの設定がされていない場合にPAP認証にフォールバックするためにコマンドを使用する。
+
+---
+51.ルータにtelnetセッションを確立できない原因  
+
+<img width="800" alt="" src="./images/test3/問題51.png">
+
+C.VTYパスワードが設定されていない
+
+A.コンソールパスワードが設定されていない  
+B.特権パスワードが暗号化されている  
+D.ACLがtelnetアクセスをブロックしている => ブロックされるのはSSH
+
+line vtyの配下でpasswordコマンドが設定されていない
