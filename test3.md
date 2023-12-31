@@ -666,3 +666,38 @@ D.外部から開始されたトラフィックのアドレス変換が可能で
 `(config)#interface s0/0/0(config-if)#ip nat outside`  
 スタティックNATを構成する:  
 `(config)#ip nat inside source static x.x.x.x y.y.y.y` => x.x.x.xは内部ローカルアドレス(プライベートアドレス)、y.y.y.yは内部グローバルアドレス（グローバルアドレス）
+
+---
+74.ルータの設定に関する説明で正しいもの
+
+<img width="600" alt="" src="./images/test3/問題74.png">
+
+B.`ip nat inside source`コマンドで指定している「1」は、アクセスコントロールリスト1番を参照していることを意味する
+
+これはPAT(*Port Address Translation*)の正しい設定。コマンドの末尾にあるoverloadによりポートアドレス変換が実現される。コマンドで指定されている「1」はACLの番号を参照しており、ACLで許可された内部ホストのアドレスをSerial0 / 0 / 0のアドレス(130.243.78.1)に変換する。ルータに接続しNATに関わっているインターフェイスには、内部インターフェイスであればip nat inside、外部のインターフェイスであればip nat outsideコマンドを設定しなければNAT / PATは動作しない。インターフェイスへの設定は必須で、インターネットへルーティングさせるためには、スタティックデフォルトルートの設定も必要。
+
+---
+75.スイッチのFa0 / 12ポートでポートセキュリティが設定されているかどうかを確認するためのコマンドを2つ選択  
+A.`Switch# show running-config`  
+C.`Switch# show port-security interface FastEthernet 0/12`
+
+B.`Switch# show switchport port-security interface FastEthernet 0/12` => ポートセキュリティを有効にする
+
+出力結果には、Port Security:Enabledと表示される。
+
+---
+76.次のようなセキュリティ要件を実現したい。  
+・Fa0 / 1に接続を許可するのはホストXのみ  
+・Fa0 / 1に他の機器が検出された場合は違反機器から送信されたフレームはドロップする。ただし正しいホストXからのフレームは転送を継続する。
+
+<img width="600" alt="" src="./images/test3/問題76.png">
+
+B.ただ一つのMACアドレスだけ学習するように、設定を修正する必要がある
+しかし実装後、正しく動作していなかった。修正項目を2つ選択  
+D.ポートセキュリティ機能をインターフェイスで有効にしなければならない
+
+A.ポートセキュリティ機能をグローバルコンフィグレーションモードで有効にしなければならない  
+C.ホストXのMACアドレスを調査して、静的に登録しなければならない  
+E.`port-security violation shutdown`を設定しなければならない
+
+Port Security:Disabledになっており、ポートセキュリティが機能していない。Maximum Mac Address fa0/1ポートに接続を許可するホストの台数設定が3台となっているため、ここを1台に設定変更しないといけない。
