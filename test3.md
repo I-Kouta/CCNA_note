@@ -844,3 +844,37 @@ A.`interface fa0/24`
 `switchport mode trunk`
 
 VLAN間の通信ではルータを経由する。VLAN10のホストがVLAN20のホストやインターネットと通信するためには、VLAN10の情報がルータまで転送され、ルーティングする必要がある。1つのVLANが複数のスイッチやルータにまたがる場合、スイッチ間やスイッチ - ルータ間をトランクリンクで接続する。今回であればスイッチAのfa0 / 23、fa0 / 24、スイッチBのfa0 / 24はトランクリンクに設定する。ルータのポートはサブインターフェイスを設定し、それぞれにIPアドレスを設定する。
+
+---
+93.ホストXとホストYが通信できるようにするために必要な設定を2つ選択
+
+<img width="600" alt="" src="./images/test3/問題93.png">
+
+A.設定A => スイッチfa0/24をトランクリンクに設定する  
+`Switch(config)#interface fa0/24`  
+`Switch(config-if)#switchport mode trunk` => トランクポートの設定  
+B.設定F => ルータにサブインターフェイスを作成し、IPアドレスをPCに設定されたデフォルトゲートウェイと一致させる  
+`Router(config)#int fa0/0`  
+`Router(config-if)#no shutdown`  
+`Router(config)#int fa0/0.1`  
+`Router(config-subif)#encapsulation dot1q 10` => トランクプロトコルの設定  
+`Router(config-subif)#ip address 192.168.10.254 255.255.255.0`  
+`Router(config)#int fa0/0.2`  
+`Router(config-subif)#encapsulation dot1q 20`  
+`Router(config-subif)#ip address 192.168.20.254 255.255.255.0`
+
+既に設定されている:  
+・ホストX(Y)のIPアドレスとデフォルトゲートウェイのIPアドレス  
+・スイッチのアクセスポートのVLAN設定とスイッチ自身のIPアドレスとスイッチの設定  
+ホストXとホストYを通信させるには、VLAN間ルーティングを設定する必要がある。
+
+---
+94.全てのホストが互いに通信できている。このネットワークにおけるアドレッシングスキームについて正しい記述を3つ選択
+
+<img width="600" alt="" src="./images/test3/問題94.png">
+
+B.IPアドレス192.168.1.27はVLAN10のホストにアサインできる  
+E.ルータのLANのインターフェイスには複数のIPアドレスを設定する  
+F.サブネットマスクは255.255.255.128を使用する
+
+VLAN10とVLAN20のホストが互いに通信できるようにするには、ネットワークアドレスを別にしてルータを使用してVLAN間ルーティングを行う必要がある。
