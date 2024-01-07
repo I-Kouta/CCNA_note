@@ -73,70 +73,80 @@ D.Layer2スイッチは宛先MACアドレスを学習するためCPUへパケッ
 
 ---
 11.CiscoルータやCatalystスイッチ上でパスワードがプレーンテキストとしてコンフィグに保存されないようにするコマンドは次のどれか。  
+B.`service password-encryption`
+
 A.`enable password`  
-B.`service password-encryption`  
 C.`enable secret`  
 D.`username cisco password encrypt`
 
 ---
 12.CDP(*Cisco Discovery Protocol*)の役割を正しい説明は次のどれか。  
+D.上記の全て。 => 隣接するデバイスの情報を知ることができるシスコ独自のレイヤ2プロトコル
+
 A.接続されているCiscoデバイスのIPアドレスを確認することができる。  
 B.接続されているCiscoデバイスのハードウェアプラットフォームを確認できる。  
 C.Catalystスイッチがそのポートに接続されているデバイスを検出できる。  
-D.上記の全て。
 
 ---
 13.CDP(*Cisco Discovery Protocol*)に関する正しい説明は次のどれか。  
+B.Cisco独自のプロトコルである。
+
 A.ネットワーク層で動作するプロトコルである。  
-B.Cisco独自のプロトコルである。  
 C.物理層とデータリンク層の2つの層で動作するプロトコル。  
 D.ルータ、ファイアウォール、スイッチなど全てのデバイスからの情報を検出できる。
 
 ---
 14.Ciscoルータ上でSSHのRSAキーを生成するには、どのコンフィグレーションが必要か。  
+C.DNSドメイン名を割り当てるコンフィグ設定
+
 A.VTYアクセスのコンフィグ設定  
 B.ユーザ名とパスワードのコンフィグ設定  
-C.DNSドメイン名を割り当てるコンフィグ設定  
 D.SSHのバージョンのコンフィグ設定
 
 ---
 15.VTYアクセスでSSHに加えてTelnetをサポートするためのコマンドは次のどれか。  
+C.`(config-line)#transport input telnet ssh`
+
 A.`(config-line)#transport input telnet`  
 B.`(config-line)#transport input ssh`  
-C.`(config-line)#transport input telnet ssh`  
 D.`(config-line)#transport input level 15`
 
 ---
 16.Cisco IOSでSSHが正常に動作するために満たす必要があるのは次のどれか(2つ選択)  
 A.Ciscoルータ上で「ip domain-name」コマンドを設定する必要がある。  
-B.CiscoルータはK9（crypto）IOSイメージを実行している必要がある。  
+B.CiscoルータはK9（crypto）IOSイメージを実行している必要がある。
+
 C.Ciscoルータ上でIPルーティングを実行している必要がある。  
 D.Ciscoルータ上でtelnetを無効化する必要がある。
 
 ---
 17.Cisco IOSイメージファイルが保存されている場所は次のどれか。  
+D.フラッシュメモリ
+
 A.NVRAM  
 B.RAM  
 C.DRAM  
-D.フラッシュメモリ
 
 ---
 18.Ciscoルータの設定を初期化するためのコマンドは次のどれか。  
+C.`#erase startup-config`
+
 A.`#write terminal`  
 B.`#erase running-config`  
-C.`#erase startup-config`  
 D.`(config)#erase startup-config`
 
 ---
 19.Ciscoルータへのリモート接続する際に通信プロトコルを暗号化できるのは次のどれか。  
+D.SSH
+
 A.HTTP  
 B.SNMP  
-C.telnet  
-D.SSH
+C.telnet
 
 ---
 20.Telnet / SSH接続で自動的なログアウトを無効化するコマンドは次のどれか。  
+C.`(config-line)#exec-timeout 0 0`
+
 A.`(config)#exec-timeout 0 0`  
 B.`(config)#timeout exec disable`  
-C.`(config-line)#exec-timeout 0 0`  
 D.`(config-line)#timeout exec disable`
