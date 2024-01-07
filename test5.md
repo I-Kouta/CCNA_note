@@ -312,62 +312,62 @@ D.OSPF MD5の認証キー
 ---
 41.標準ACL、拡張ACLの最も効率的な適用場所は次のどれか(2つ選択)  
 A.標準ACL：宛先ネットワークに近いルーティング機器のインターフェース  
-B.標準ACL：送信元ネットワークに近いルーティング機器のインターフェース  
-C.拡張ACL：宛先ネットワークに近いルーティング機器のインターフェース  
 D.拡張ACL：送信元ネットワークに近いルーティング機器のインターフェース
+
+B.標準ACL：送信元ネットワークに近いルーティング機器のインターフェース  
+C.拡張ACL：宛先ネットワークに近いルーティング機器のインターフェース
 
 ---
 42.interfaceに適用されているACLを確認するためのコマンドは次のどれか。  
-A.`show interface`  
-B.`show ip interface`  
-C.`show access-lists`  
-D.`show ip route`
+B.`show ip interface`
 
 ---
 43.CiscoルータをDHCPクライアントにするためのコマンドは次のどれか。  
-A.`(config-if)# ip dhcp client`  
-B.`(config-if)# ip address dhcp`  
-C.`(config-if)# ip dhcp helper-address`  
-D.`(config)# ip address client`
+B.`(config-if)# ip address dhcp`
 
 ---
 44.GigabitEthernet0/1がDHCP経由で設定されていることを示すコマンドはどれか。  
-A.`show ip dhcp pool`  
-B.`debug ip dhcp server packet`  
-C.`show ip interface GigabitEthernet 0/1`  
-D.`show cdp neighbor`
+C.`show ip interface GigabitEthernet 0/1`
+
+A.`show ip dhcp pool` => DHCPプールの表示  
+D.`show cdp neighbor` => CDPの情報
 
 ---
 45.DHCPの役割を正しく説明しているのは次のどれか(2つ選択)  
 A.DHCPサーバはクライアントIPアドレスを動的にリースする  
-B.DHCPクライアントは、DHCPで割り当て可能なプール情報を維持する  
-C.DHCPサーバはクライアントからの更新を要求することなくIPアドレスを割り当てる  
 D.DHCPサーバはIPアドレスのプールから特定のIPアドレスを除外する機能を持つ
+
+B.DHCPクライアントは、DHCPで割り当て可能なプール情報を維持する  
+C.DHCPサーバはクライアントからの更新を要求することなくIPアドレスを割り当てる
 
 ---
 46.CiscoルータをDHCPサーバに設定して、そのDHCPサーバ上で割り当てられているアドレスを確認するためのコマンドは次のどれか。  
+C.`show ip dhcp binding`
+
 A.`show ip dhcp pool`  
 B.`show ip dhcp conflict`  
-C.`show ip dhcp binding`  
 D.`show ip interface`
 
 ---
 47.次のどのタイプのIPアドレスが、NATデバイスのパブリックIPアドレス(グローバルIPアドレス)であるか。  
+B.inside global
+
 A.inside local  
-B.inside global  
 C.outside local  
 D.outside global
 
 ---
 48.NATのコンフィグ設定でどのキーワードにより、1つの外部IPアドレスを複数のホストに使用することができるか。  
+C.overload
+
 A.pool  
 B.dynamic  
-C.overload  
 D.nat
 
 ---
 49.NAT overloadの性質について正しい説明は次のどれか。  
-A.内部IPアドレスに対して、1対多の関連性を適用する  
+A.内部IPアドレスに対して、1対多の関連性を適用する
+
 B.内部IPアドレスに対して、1対1の関連性を適用する  
 C.内部IPアドレスに対して、多対多の関連性を適用する  
 D.WAN側に接続するGigabitEthernetインターフェースに対してのみ適用できる
@@ -375,7 +375,8 @@ D.WAN側に接続するGigabitEthernetインターフェースに対してのみ
 ---
 50.以下のCiscoルータ上のコンフィグ設定によって有効になる機能は次のどれか。  
 `(config)#ip nat pool CISCO 192.168.1.0 192.168.1.10 255.255.255.0`  
+D.ダイナミックNATアドレスプール
+
 A.スタティックNAT  
 B.PAT  
-C.DHCPプール  
-D.ダイナミックNATアドレスプール
+C.DHCPプール
