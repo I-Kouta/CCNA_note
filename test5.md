@@ -675,70 +675,43 @@ C.6to4トンネリング
 
 ---
 111.IEEE802.11b/g ワイヤレスインフラの展開で、次のどの設計要素が最も重要か  
-A.無線クライアントからの通信を10Mbps以下にする  
-B.Cisco WLCで最大レートを36Mbps以下に設定する  
-C.アクセスポイントの電波を最も弱くする  
 D.物理的に近接しているアクセスポイントに重複しないチャネルを割り当てる
 
 ---
 112.PSK(事前共有鍵)モードのWPA2では、どのタイプの無線の暗号化が使用されるか。  
-A.IPsec  
-B.TKIP with RC4  
-C.AES 128bit  
 D.AES 256bit
 
 ---
 113.5GHzの周波数帯域を使用している無線LAN規格は次のどれか(2つ選択)  
 A.IEEE802.11a  
-B.IEEE802.11b  
-C.IEEE802.11c  
 D.IEEE802.11ac
 
 ---
-114.Cisco Wireless LAN Contorollerを導入するメリットは次のどれか。  
-A.各アクセスポイントに対して個別に設定する必要がなくなる  
-B.autonomous APとlightweight APの両方を制御することができる  
-C.WLCによりAPを集中管理できるが、複雑な構成管理が必要となる  
-D.各アクセスポイントのSSIDを1つにまとめることができる
+114.Cisco Wireless LAN Controllerを導入するメリットは次のどれか。  
+A.各アクセスポイントに対して個別に設定する必要がなくなる
 
 ---
 115.Cisco WLCへの接続が失われた後も無線クライアントに引き続きサービスを提供する統合アクセスポイントのモードは次のどれか。  
-A.autonomous  
-B.lightweight  
-C.flexconnect  
-D.local
+C.flexconnect
 
 ---
 116.Cisco WLCの設定で、Voice over WLANの導入を設定する時にGUI上の設定画面で選択されるQoSプロファイルは次のどれか。  
-A.Bronze  
-B.Silver  
-C.Gold  
 D.Platinum
 
 ---
 117.WLCのどの機能を有効にすると、特定のネットワークから管理アクセスが制限されるか。  
-A.management ACL  
-B.CPU ACL  
-C.RADIUS  
-D.TACACS+
+B.CPU ACL
 
 ---
 118.Cisco WLCで管理できる無線アクセスポイントのモードは次のどれか。  
-A.autonomous  
-B.lightweight  
-C.management  
-D.local
+B.lightweight
 
 ---
 119.Cisco WLCのGUI画面で新しい「WLAN」を設定する時に入力する必要がある値となる「項目」は次のどれか(2つ選択)  
 A.SSID  
-B.IPアドレス  
-C.Profile Name  
-D.Radio Policy
+C.Profile Name
 
 ---
 120.Cisco WLCでWPA2-PSKを使用してWLANを構成する場合、WLCのGUI画面ではどの2つのフォーマットを選択できるか(2つ選択)  
-A.binary  
 B.ASCII  
-C.decimal  
 D.HEX（hexadecimal）
