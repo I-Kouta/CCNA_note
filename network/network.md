@@ -31,14 +31,26 @@ URL:https://network00.net/category/ciscoios/
 `R1(config-if)#no shutdown`
 
 ### `ルータ:R2のインターフェイス設定`
-`R2(config)#interface fastethernet 0/0` => インターフェイス設定  
-`R2(config-if)#ip address 192.168.40.1 255.255.255.0` => IPアドレスの設定  
-`R2(config-if)#no shutdown` => インターフェイスの有効化
+`R2(config)#interface fastethernet 0/0`  
+`R2(config-if)#ip address 192.168.40.1 255.255.255.0`  
+`R2(config-if)#no shutdown`
 
 `R2(config-if)#interface serial 0/0`  
-`R2(config-if)#ip address 192.168.20.1 255.255.255.0`  
+`R2(config-if)#ip address 192.168.20.2 255.255.255.0`  
 `R2(config-if)#no shutdown`
 
 ### `ルータ:R3のインターフェイス設定`
+`R3(config)#interface fastethernet 0/0`  
+`R2(config-if)#ip address 192.168.50.1 255.255.255.0`  
+`R2(config-if)#no shutdown`
+
+`R2(config-if)#interface serial 0/0`  
+`R2(config-if)#ip address 192.168.30.2 255.255.255.0`  
+`R2(config-if)#no shutdown`
 
 ### `インターフェイス状態の確認`
+
+<img width="700" alt="" src="./images/インターフェイスの状態.png">
+
+`#show ip interface brief` => インターフェイスの要約情報を表示。Statusは物理層の状態、Protocolはレイヤ2(データリンク層)の状態を判断できる  
+`#show ip interface` => インターフェイスに対して適用したアクセスリストを確認する
