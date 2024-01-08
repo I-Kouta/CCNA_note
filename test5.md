@@ -578,24 +578,15 @@ D.キューが満杯になることを防ぐことにより、輻輳を緩和で
 
 ---
 91.次のどのアクションのセットが、多要素認証の要件を満たしているか。  
-A.ユーザはユーザ名をパスワードを入力して、スマホの認証アプリで通知をクリック。  
-B.ユーザはユーザ名をパスワードを入力して、さらに秘密の質問の回答を入力。  
-C.ユーザはRSAトークンにPINを入力し、表示されたRSAキーをログイン画面に入力。  
-D.ユーザは認証にパスワードを使用せずに、生体認証を行う。
+A.ユーザはユーザ名をパスワードを入力して、スマホの認証アプリで通知をクリック。
 
 ---
 92.サイト間VPNの通信を行う際、ユーザデータの転送を行うプロトコルは次のどれか。  
-A.IKEv1  
-B.IKEv2  
-C.ISAKMP  
 D.IPsec
 
 ---
 93.ハブアンドスポーク構成でフルメッシュトポロジーを確立するVPNの種類はどれか。  
-A.IPsec-VPN  
-B.Dynamic Multipoint VPN  
-C.MPLS-VPN  
-D.Internet VPN
+B.Dynamic Multipoint VPN
 
 ---
 94.以下のコンフィグ設定を行った時、スイッチの動作にどのような影響がでるか。  
@@ -603,9 +594,6 @@ D.Internet VPN
 `(config)# interface GigabitEthernet0/1`  
 `(config-if)# switchport mode access`  
 `(config-if)# switchport access vlan 10`  
-A.全てのスイッチポートのインターフェースの状態がtrust(信頼できる)になる  
-B.全てのスイッチポートのインターフェースの状態がuntrust(信頼できない)になる  
-C.GigabitEthernet0/1のインターフェースの状態がtrust(信頼できる)になる  
 D.GigabitEthernet0/1のインターフェースの状態がuntrust(信頼できない)になる
 
 ---
@@ -614,45 +602,27 @@ D.GigabitEthernet0/1のインターフェースの状態がuntrust(信頼でき�
 `(config)# interface GigabitEthernet0/1`  
 `(config-if)# switchport mode access`  
 `(config-if)# switchport access vlan 10`  
-A.GigabitEthernet0/1に着信してくるトラフィックのうち、無効なMAC/IPアドレスの関連付けテーブル(バインディングテーブル)持つ全てのARPトラフィックを破棄する  
-B.GigabitEthernet0/1から送信されるトラフィックのうち、無効なMAC/IPアドレスの関連付けテーブル(バインディングテーブル)持つ全てのARPトラフィックを破棄する  
-C.VLAN10が割り当てられたスイッチポート全てでARPパケットが破棄される  
-D.GigabitEthernet0/1から送信されるトラフィックの中で、DHCPサーバを宛先としたトラフィックのみは送信される
+A.GigabitEthernet0/1に着信してくるトラフィックのうち、無効なMAC/IPアドレスの関連付けテーブル(バインディングテーブル)持つ全てのARPトラフィックを破棄する
 
 ---
 96.以下のコンフィグでネットワーク全体で正常に通信できている時、GigabitEthernet0/1のインターフェースに次のどのタイプのネットワーク機器を接続する必要があるか。  
 `(config)# ip arp inspection vlan 10`  
 `(config)# interface GigabitEthernet0/1`  
 `(config-if)# ip arp inspection trust`  
-A.PC  
-B.DHCPクライアント  
-C.無線アクセスポイント  
 D.ルータ
 
 ---
 97.DHCPスヌーピングを有効にするコマンドは次のどれか。  
-A.`(config)# ip arp inspection`  
-B.`(config)# ip dhcp binding`  
-C.`(config)# aaa new-model`  
 D.`(config)# ip dhcp snooping`
 
 ---
 98.`aaa new-model`コマンドを1行設定することで、どのような効果が得られるか。  
-A.Radiusサーバからのトラフィックを受信できるようになる  
-B.そのデバイス上でAAAがサービスが有効になる  
-C.TACACS+サーバからのトラフィックを受信できるようになる  
-D.そのデバイス上のローカルユーザが有効になる
+B.そのデバイス上でAAAがサービスが有効になる
 
 ---
 99.AAAの「認証」と「認可」の主な違いは次のどれか。  
-A.認可はネットワークシステムにアクセスしようとしているユーザーの識別と検証を行い、認証はユーザが実行できるタスクを制御する  
-B.認証はネットワークシステムにアクセスしようとしているユーザーの識別と検証を行い、認可はユーザが実行できるタスクを制御する  
-C.認証はネットワークシステムにアクセスしようとしているユーザーの識別と検証を行い、認可はユーザが開始したアクティビティを承認ログに記録する  
-D.認可はネットワークシステムにアクセスしようとしているユーザーの識別と検証を行い、認証はユーザが開始したアクティビティを承認ログに記録する
+B.認証はネットワークシステムにアクセスしようとしているユーザーの識別と検証を行い、認可はユーザが実行できるタスクを制御する
 
 ---
 100.RADIUSとTACACS+の違いは何か。  
-A.TACACS+は「認証」「認可」のサービスが分離しているのに対して、RADIUSでは、「認証」「認可」のサービスが統合されている  
-B.RADIUSは「認証」「認可」のサービスが分離しているのに対して、TACACS+では、「認証」「認可」のサービスが統合されている  
-C.RADIUSはCisco独自のプロトコルである  
-D.RADIUSはダイヤル認証でしか使用できない
+A.TACACS+は「認証」「認可」のサービスが分離しているのに対して、RADIUSでは、「認証」「認可」のサービスが統合されている
