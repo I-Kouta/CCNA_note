@@ -12,3 +12,7 @@ URL:https://network00.net/category/ciscoios/
 
 - インターフェイスの有効化  
 `(config-if)#no shutdown`
+
+### `設定例の構成`
+
+<img width="700" alt="" src="./images/インターフェイス設定例.png">
