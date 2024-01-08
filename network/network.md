@@ -31,6 +31,13 @@ URL:https://network00.net/category/ciscoios/
 `R1(config-if)#no shutdown`
 
 ### `ルータ:R2のインターフェイス設定`
+`R2(config)#interface fastethernet 0/0` => インターフェイス設定  
+`R2(config-if)#ip address 192.168.40.1 255.255.255.0` => IPアドレスの設定  
+`R2(config-if)#no shutdown` => インターフェイスの有効化
+
+`R2(config-if)#interface serial 0/0`  
+`R2(config-if)#ip address 192.168.20.1 255.255.255.0`  
+`R2(config-if)#no shutdown`
 
 ### `ルータ:R3のインターフェイス設定`
 
