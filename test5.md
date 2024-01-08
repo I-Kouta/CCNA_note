@@ -485,75 +485,47 @@ C.ルートポート
 
 ---
 71.ネゴシエーションプロトコルを使用することなく、2つのスイッチ間でEtherChannelを構成するためには、次のどのモードを使用する必要があるか。  
-A.active  
-B.passive  
-C.on  
-D.auto
+C.on
 
 ---
 72.EtherChannelの技術についての正しい説明は次のどれか(2つ選択)  
 A.FastEthernetまたはGigabitEthernetインターフェースを単一の EtherChannel に束ねることで帯域幅を拡大する  
-B.EtherChannel内のリンクの1つに障害が発生しても冗長性を維持できる。  
-C.EtherChannel内での物理リンク間でトラフィックの負荷は共有できない。  
-D.STPはEtherChannelリンクをブロッキングポートにはしない
+B.EtherChannel内のリンクの1つに障害が発生しても冗長性を維持できる。
 
 ---
 73.オープンスタンダードプロトコル(LACP)でレイヤ3EtherChannelを確立するためのスイッチでの必要なコンフィグはどれか(2つ選択)  
 A.`interface GigabitEthernet0/1`  
 `channel-group 5 mode active`  
-B.`interface GigabitEthernet0/1`
-`channel-group 5 mode auto`  
-C.`interface GigabitEthernet0/1`
-`channel-group 5 mode on`  
 D.`interface port-channel 5`
 `no switchport`
 `ip address 192.168.0.1 255.255.255.0`
 
 ---
 74.アクティブにネゴシエートするEtherChanelを構成するために使用するコンフィグ設定は次のどれか(2つ選択)  
-A.`channel-group 5 mode auto`  
 B.`channel-group 5 mode desirable`  
-C.`channel-group 5 mode on`  
 D.`channel-group 5 mode active`
 
 ---
 75.EtherChannelを構成する時、LACPデバイスが検出された場合にのみ、LACPを有効にするモードは次のどれか。  
-A.desirable  
-B.auto  
-C.passive  
-D.active
+C.passive
 
 ---
 76.送信元と宛先IPアドレスに基づいたEtherChannel内でのトラフィックを負荷分散を実現するためのコマンドは次のどれか。  
-A.`(config)# port-channel load-balance src-dst-mac`  
 B.`(config)# port-channel load-balance src-dst-ip`  
-C.`(config)# port-channel load-balance src-dst-port`  
-D.`(config)# port-channel load-balance ip`
 
 ---
 77.EtherChannelを構成するインターフェースにおいて、プロトコルのモードまで確認するコマンドはどれか。  
-A.`show etherchannel summary`  
-B.`show etherchannel mode`  
 C.`show etherchannel detail`  
-D.`show etherchannel load-balance`
 
 ---
 78.Cisco独自のプロトコルでEtherChannelを構成するモードは次のどれか(2つ選択)  
-A.active  
-B.passive  
 C.desirable  
 D.auto
 
 ---
 79.LACPとPagPを使用せずにEtherChannelを構成するモードは次のどれか  
-A.static  
-B.on  
-C.desirable  
-D.auto
+B.on
 
 ---
 80.対向スイッチとのEtherChannelの構成に失敗した場合、次のどれが原因であるか。  
-A.対向スイッチと機種やOSバージョンが異なる  
-B.EtherChannelのチャネルグループが対向スイッチと一致していない  
-C.対向スイッチの物理ポートの「speed/duplex、VLAN番号」が一致していない  
-D.対向スイッチとEtherChannelで使用する物理ポート番号が一致していない
+C.対向スイッチの物理ポートの「speed/duplex、VLAN番号」が一致していない
