@@ -5,7 +5,7 @@ URL:https://network00.net/category/ciscoios/
 ### `IOS入門`
 
 - モード変更のコマンド</br>
-<img width="700" alt="" src="./images/モード変更.png"></br>
+<img width="600" alt="" src="./images/モード変更.png"></br>
 ユーザモード:統計情報を表示。ルータの基本的な状態の確認が可能  
 特権モード:ルータの設定を表示。詳細な状態の確認やファイルの移動等が行える  
 グローバルコンフィギュレーションモード:ルータに全体的な設定・変更を苦悪ことができる  
@@ -56,7 +56,7 @@ Enable password
 
 ### `設定例の構成`
 
-<img width="700" alt="" src="./images/インターフェイス設定例.png">
+<img width="600" alt="" src="./images/インターフェイス設定例.png">
 
 ### `ルータ:R1のインターフェイス設定`
 `R1(config)#interface fastethernet 0/0` => インターフェイス設定  
