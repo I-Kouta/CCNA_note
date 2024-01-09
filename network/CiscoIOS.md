@@ -90,3 +90,15 @@ IPアドレスの設定
 
 `#show ip interface brief` => インターフェイスの要約情報を表示。Statusは物理層の状態、Protocolはレイヤ2(データリンク層)の状態を判断できる  
 `#show ip interface` => インターフェイスに対して適用したアクセスリストを確認する
+
+### `スタティックルート`
+ルータでは、経路制御を行っており、宛先IPアドレスに対して最適な経路をルーティングテーブルから探してネクストホップアドレスを決めている。
+
+- スタティックルートの設定コマンド  
+`(config)#ip route [network] [subnet-mask] [interface] [next_hop] [AD] [permanent]`  
+network:宛先ネットワーク  
+mask:サブネットマスク  
+interface:次のルータへ送出する際のインターフェイス  
+next_hop:宛先ネットワークへ転送するための次のルータのアドレス  
+AD:スタティックルートの場合は1  
+permanent:状態に無関係でルーティングテーブルに保持される
