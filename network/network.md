@@ -11,6 +11,28 @@ URL:https://network00.net/category/ciscoios/
 グローバルコンフィギュレーションモード:ルータに全体的な設定・変更を苦悪ことができる  
 項目別の設定モード:項目別に詳細な設定・変更を行うことができる(インターフェイス設定モード、ルータ設定モード等)
 
+- パスワードの設定  
+Enable password  
+`Router(config)#enable secret xxx`
+ユーザモードパスワード(コンソール)  
+`Router(config)#line console 0`  
+`Router(config-line)#password xxxx`  
+`Router(config-line)#login`  
+ユーザモードパスワード(Telnet)  
+`Router(config)#line vty 0 4`  
+`Router(config-line)#password xxxx`  
+`Router(config-line)#login`  
+パスワードの設定確認  
+`Router#show running-config`  
+(表示されるパスワードを無効にしたい場合は以下のコマンドを実行)  
+`Router(config)#service password-encryption`  
+ユーザ名を用いたローカル認証  
+`Router(config)#line console 0`  
+`Router(config-line)#username yyyy password xxxx`  
+(コンソールでこの認証を有効にする場合)  
+`Router(config)#line console 0` => 遠隔接続の場合は`Router(config)#line vty 0 4`  
+`Router(config-line)#login local`
+
 ### `インターフェイスの設定`
 
 - インターフェイス設定モード  
