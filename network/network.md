@@ -33,6 +33,16 @@ Enable password
 `Router(config)#line console 0` => 遠隔接続の場合は`Router(config)#line vty 0 4`  
 `Router(config-line)#login local`
 
+- その他の基本的なコマンド  
+ルータのホスト名を設定  
+`Router(config)#hostname xxxx`  
+設定の表示と保存  
+`Router#show running-config`  
+`Router#copy running-config startup-config`  
+保存した設定の削除、ルータの再起動  
+`Router#write erase`  
+`Router#reload` => 組み合わせることで工場出荷状態へ戻すことが可能
+
 ### `インターフェイスの設定`
 
 - インターフェイス設定モード  
