@@ -148,19 +148,27 @@ Cは直接接続されたネットワーク、SはRIPルート
 ---
 ### `VLAN`
 
-- VLANの種類
-
+- VLANの種類  
 スタティックVLAN  
-ポートベースVLANと呼ばれる方式。手動でポートごとにVLANを定義する
-
+ポートベースVLANと呼ばれる方式。手動でポートごとにVLANを定義する  
 ダイナミックVLAN
 VLANの割り当てを自動的に決定する。MAC(アドレス)ベースVLAN、プロトコルベースVLANなどの方式が該当する。
 
-- VLANの識別
-
+- VLANの識別  
 アクセスリンク:1つのVLANだけに属しており、PC等の機器を接続するリンクに適用する。  
 トランクリンク:複数のVLANに属しており、スイッチ間を接続するリンクに適用する。  
 ISL(*Inter-Switch Link*):シスコ独自のトラッキングプロトコル  
 IEEE802.1Q:IEEE標準のトラッキングプロトコル
 
 <img width="500" alt="" src="./images/VLAN識別.png">
+
+- VLANの設定コマンド  
+VLANの作成  
+`(config)#vlan [vlan-id]`  
+`(config-vlan)name [vlan-name]` (名前設定は必須ではない)  
+インターフェイスへの適用  
+`(config-if)#switchport mode access`  
+`(config-if)#switchport access vlan [vlan-id]`  
+トランクリンクの設定  
+`(config-if)#switchport trunk encapsulation [dot1q | isl]`  
+`(config-if)#switchport mode trunk`  
