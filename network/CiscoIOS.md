@@ -198,3 +198,13 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 `SW3(config)#interface fastethernet0/0-1`  
 `SW1(config-range)#switchport trunk encapsulation dot1q` ※デフォルトのため省略可  
 `SW1(config-if)#switchport mode trunk`
+
+- VLANの確認
+
+<img width="500" alt="" src="./images/VLAN確認.png">
+
+`show vlan brief`:スイッチに存在する全てのVLANに関する情報を表示。briefで概要情報のみ表示
+
+<img width="500" alt="" src="./images/トランクリンク確認.png">
+
+`show interface trunk`:トランクポートの設定や状態を表示
