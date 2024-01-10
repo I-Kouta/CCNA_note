@@ -172,3 +172,29 @@ VLANの作成
 トランクリンクの設定  
 `(config-if)#switchport trunk encapsulation [dot1q | isl]`  
 `(config-if)#switchport mode trunk`  
+
+- VLANの設定例
+
+<img width="500" alt="" src="./images/VLAN設定.png">
+
+・VLANの作成、スイッチ:SW1, SW2, SW3  
+SW1:`(config)#vlan 10`  
+SW1:`(config-vlan)#name GROUP10`
+SW2:`(config)#vlan 20`  
+SW2:`(config-vlan)#name GROUP20`</br></br>
+・インターフェイスへの適用、スイッチ:SW1, SW2  
+`SW1(config)#interface fastethernet0/0`  
+`SW1(config-if)#switchport mode access`  
+`SW1(config-if)#switchport access vlan 10`  
+`SW1(config)#interface fastethernet0/1`  
+`SW1(config-if)#switchport mode access`  
+`SW1(config-if)#switchport access vlan 20`</br></br>
+・トランクリンクの設定  
+スイッチ:SW1, SW2  
+`SW1(config)#interface fastethernet0/23`  
+`SW1(config-if)#switchport trunk encapsulation dot1q` ※デフォルトのため省略可  
+`SW1(config-if)#switchport mode trunk`  
+スイッチ:SW3  
+`SW3(config)#interface fastethernet0/0-1`  
+`SW1(config-range)#switchport trunk encapsulation dot1q` ※デフォルトのため省略可  
+`SW1(config-if)#switchport mode trunk`
