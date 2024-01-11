@@ -226,3 +226,33 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 `SW3(config)#interface gigabitEthernet3/3`  
 `SW3(config-subif)#switchport trunk encapsulation dot1q` => トランクリンクの設定  
 `SW3(config-subif)#switchport mode trunk`
+
+---
+### `ルーティング(RIP)`
+
+・*Router Information Protocol*の略  
+・中小規模のネットワーク向け  
+・コンバージェンス(収束)に時間がかかる  
+・ホップをメトリックとして使用
+
+- RIPルーティングの設定例
+
+<img width="500" alt="" src="./images/RIPルーティング.png">
+
+・ルータ:R1のRIPルーティングの設定  
+`R1(config)#router rip` => RIPプロセスの有効化  
+`R1(config-router)#network 192.168.10.0` => RIPを有効にするインターフェイスの指定  
+`R1(config-router)#network 192.168.20.0`  
+`R1(config-router)#network 192.168.30.0`  
+`R1(config-router)#passive-interface fastethernet0/0` => パッシブインターフェイスの設定(ルーティングアップデートの抑制)</br></br>
+・ルータ:R2のRIPルーティングの設定  
+`R2(config)#router rip`  
+`R2(config-router)#network 192.168.20.0`  
+`R2(config-router)#network 192.168.40.0`  
+`R2(config-router)#passive-interface fastethernet0/0`</br></br>
+・ルータ:R3のRIPルーティングの設定  
+`R2(config)#router rip`  
+`R2(config-router)#network 192.168.30.0`  
+`R2(config-router)#network 192.168.50.0`  
+`R2(config-router)#passive-interface fastethernet0/0`</br></br>
+`(config-router)#auto-summary` => 自動集約を有効(デフォルトで有効)
