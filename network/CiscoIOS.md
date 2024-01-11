@@ -233,7 +233,8 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 ・*Router Information Protocol*の略  
 ・中小規模のネットワーク向け  
 ・コンバージェンス(収束)に時間がかかる  
-・ホップをメトリックとして使用
+・ホップをメトリックとして使用  
+・ディスタンベクター型のルーティングプロトコル
 
 - RIPルーティングの設定例
 
@@ -256,3 +257,8 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 `R2(config-router)#network 192.168.50.0`  
 `R2(config-router)#passive-interface fastethernet0/0`</br></br>
 `(config-router)#auto-summary` => 自動集約を有効(デフォルトで有効)
+
+- RIPルーティングの確認  
+`show ip route` => ルーティングテーブルの確認  
+`show ip protocols` => ルーティングプロトコルの確認。各種タイマ、RIPのバージョン、有効な設定したネットワークなどを確認できる  
+`debug ip rip` => ルーティングプロトコルの確認(デバッグ)
