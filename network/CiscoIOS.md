@@ -208,3 +208,21 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 <img width="500" alt="" src="./images/トランクリンク確認.png">
 
 `show interface trunk`:トランクポートの設定や状態を表示
+
+- ルータによるVLAN間ルーティング  
+ルータのインターフェイス数よりも多くのVLANは使用できない。その場合は1つの物理インターフェイスだけでVLAN間ルーティングを可能にする方法がある(*router-on-a-stick*)。
+
+<img width="500" alt="" src="./images/VLAN間ルーティング.png">
+
+・ルータの設定  
+`R1(config)#interface gigabitEthernet0/0.1` => インターフェイスの設定  
+`R1(config-subif)#encapsulation dot1Q 10`  
+`R1(config-subif)#ip address 192.168.10.1 255.255.255.0`</br></br>
+`R1(config)#interface gigabitEthernet0/0.2`
+`R1(config-subif)#encapsulation dot1Q 20`  
+`R1(config-subif)#ip address 192.168.20.1 255.255.255.0`
+
+・スイッチ:SW3の設定  
+`SW3(config)#interface gigabitEthernet3/3`  
+`SW3(config-subif)#switchport trunk encapsulation dot1q` => トランクリンクの設定  
+`SW3(config-subif)#switchport mode trunk`
