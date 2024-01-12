@@ -274,3 +274,24 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 0.0.0.0 255.255.255.255(省略でany)</br></br>
 ・192.168.0.0 / 24 ~ 192.168.3.0 / 24の4つを指定  
 => 192.168.0.0 0.0.3.255(22ビット目まで共通のため)
+
+- ACL(アクセスリスト)  
+ルータ上を通過するパケットの許可 / 拒否を制御する。パケットフィルタリングとも呼ばれる。</br></br>
+・標準ACL:パケットの送信元IPアドレスを指定してパケットフィルタリングを行う。名前付きと番号付きがある。番号は1 ~ 99, 1300 ~ 1999。</br></br>
+・拡張ACL:送信元IP、宛先IP、送信元ポート番号、宛先ポート番号、プロトコル等も指定してパケットフィルタリングを行う。番号は100 ~ 199, 2000 ~ 2699。</br></br>
+・標準ACLの作成  
+`(config)#access-list [number] [permit | deny] [source] [wildcard]`  
+permit | deny:permitは許可、denyは拒否  
+source:送信元IPアドレスを指定  
+wildcard:ワイルドカードマスク</br></br>
+・拡張ACLの作成  
+`(config)#access-list [number] [permit | deny] [protocol] [source] [wildcard] [port] [dest] [wildcard] [port] [established | log | log-input]`  
+protocol:プロトコル名を指定(ip, icmp, tcp, udp等)  
+port:演算子の後にポート番号を指定する  
+established:ACKまたはRSTビットの立っているパケットが対象  
+log:ログが出力される  
+log-input:送信元MACアドレスも出力される</br></br>
+・ACLのインターフェイスへの適用  
+`(config-if)#ip access-group [number] [in | out]`  
+number:インターフェイスに適用するACLの番号  
+in | out:inの場合はインターフェイスに到着するパケットを指定、outの場合はインターフェイスから発信するパケットを指定
