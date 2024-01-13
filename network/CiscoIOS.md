@@ -263,6 +263,7 @@ SW2:`(config-vlan)#name GROUP20`</br></br>
 `show ip protocols` => ルーティングプロトコルの確認。各種タイマ、RIPのバージョン、有効な設定したネットワークなどを確認できる  
 `debug ip rip` => ルーティングプロトコルの確認(デバッグ)
 
+---
 ### `ワイルドカードマスクとアクセスリスト`
 
 - ワイルドカードマスク  
@@ -295,3 +296,22 @@ log-input:送信元MACアドレスも出力される</br></br>
 `(config-if)#ip access-group [number] [in | out]`  
 number:インターフェイスに適用するACLの番号  
 in | out:inの場合はインターフェイスに到着するパケットを指定、outの場合はインターフェイスから発信するパケットを指定
+
+- ACLの設定例
+
+<img width="500" alt="" src="./images/ACL設定.png">
+
+・A => Router0 => Cは許可し、それ以外 => Router0 => Cは拒否  
+Router0の設定  
+`(config)#access-list 11 permit 192.168.0.0 0.0.0.255` => 192.168.0から始まるアドレスを許可  
+`(config)#access-list 11 deny any` => 暗黙のdeny。全て拒否する。anyは0.0.0.0 255.255.255.255と同義(j自動で挿入される)  
+`(config)#interface Vlan1`  
+`(config-if)#ip access-group 11 out` => 標準ACLは宛先に近い方に適用  
+`(config-if)end`  
+・C => Router0 => Aは許可し、それ以外は拒否  
+Router0の設定  
+`(config)#access-list 111 permit ip 192.168.22.0 0.0.0.255 192.168.11.0 0.0.0.255`  
+`(config)#access-list 111 deny ip any any`  
+`(config)#interface Vlan1`  
+`(config)#ip access-group 111 in` => 拡張ACLは送信元に近い方に適用  
+`(config-if)eit`
