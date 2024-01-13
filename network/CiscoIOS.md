@@ -365,3 +365,22 @@ interface:外側インターフェイス</br></br>
 ・外部インターフェイスを指定  
 `(config)#interface GigabitEthernet0/0`  
 `(config-if)#ip nat outside`
+
+- PATの設定例
+
+<img width="500" alt="" src="./images/PAT設定.png">
+
+・RT-Aの設定  
+`RT-A(config)#access-list 1 permit 192.168.10.0 0.0.0.255`  
+`RT-A(config)#ip nat inside source list 1 interface GigabitEthernet0/1 overload`  
+`RT-A(config)#interface GigabitEthernet0/0`  
+`RT-A(config-if)#ip nat inside`
+`RT-A(config)#interface GigabitEthernet0/1`  
+`RT-A(config-if)#ip nat outside`</br></br>
+・RT-Bの設定  
+`RT-B(config)#access-list 1 permit 192.168.20.0 0.0.0.255`  
+`RT-B(config)#ip nat inside source list 1 interface GigabitEthernet0/1 overload`  
+`RT-B(config)#interface GigabitEthernet0/0`  
+`RT-B(config-if)#ip nat inside`
+`RT-B(config)#interface GigabitEthernet0/1`  
+`RT-B(config-if)#ip nat outside`
