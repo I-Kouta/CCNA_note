@@ -330,3 +330,22 @@ inside / outside:対象の機器が内部 / 外部のどちらにあるか
 ・外部インターフェイスを指定  
 `(config)#interface GigabitEthernet 0/1`  
 `(config-if)#ip nat outside`
+
+- NATの設定例
+
+<img width="500" alt="" src="./images/NAT設定.png">
+
+・RT-Aの設定  
+`RT-A(config)#ip nat inside source static 192.168.10.1 110.10.10.51`  
+`RT-A(config)#ip nat inside source static 192.168.10.2 110.10.10.52`  
+`RT-A(config)#interface GigabitEthernet 0/0`  
+`RT-A(config)#ip nat inside`  
+`RT-A(config)#interface GigabitEthernet 0/1`  
+`RT-A(config)#ip nat outside`</br></br>
+・RT-Bの設定  
+`RT-B(config)#ip nat inside source static 192.168.20.21 120.20.20.62`  
+`RT-B(config)#ip nat inside source static 192.168.20.22 110.10.20.63`  
+`RT-B(config)#interface GigabitEthernet 0/0`  
+`RT-B(config)#ip nat inside`  
+`RT-B(config)#interface GigabitEthernet 0/1`  
+`RT-B(config)#ip nat outside`
