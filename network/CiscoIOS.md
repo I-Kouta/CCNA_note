@@ -420,3 +420,8 @@ RIPルーティングの設定
 `Router(config)router ospf1`  
 `Router(config-router)network 192.168.30.0 0.0.0.255 area 0`  
 `Router(config-router)network 192.168.50.0 0.0.0.255 area 0`
+
+RIPルーティングの確認  
+`show ip route`:  
+O:経路情報の情報源のものはOSPFエントリ。  
+`#sh ip prot`:ルーティングをプロトコルを確認する
