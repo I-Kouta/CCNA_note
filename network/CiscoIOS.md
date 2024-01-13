@@ -396,8 +396,27 @@ interface:外側インターフェイス</br></br>
 - OSPFの設定コマンド  
 ・OSPFの有効化  
 `(config)#router ospf [process-id]`  
-process-id:OSPFルーティングプロセスをしきべつするためのID(1 ~ 65535)。  
+process-id:OSPFルーティングプロセスをしきべつするためのID(1 ~ 65535)。</br></br>
 ・OSPFで管理するネットワーク(インターフェイス)とエリアの指定  
 `(config-router)#network [address] [wildcard] area [area-id]`  
 address:ネットワークアドレスまたはインターフェイスのIPアドレスで指定  
 area-id:割り当てたいエリアを指定
+
+- OSPFルーティングの設定例
+
+<img width="500" alt="" src="./images/OSPFルーティング.png">
+
+RIPルーティングの設定  
+・ルータ:R1のOSPFルーティングの設定  
+`Router(config)router ospf1`  
+`Router(config-router)network 192.168.10.0 0.0.0.255 area 0`  
+`Router(config-router)network 192.168.20.0 0.0.0.255 area 0`  
+`Router(config-router)network 192.168.30.0 0.0.0.255 area 0`</br></br>
+・ルータ:R2のOSPFルーティングの設定  
+`Router(config)router ospf1`  
+`Router(config-router)network 192.168.20.0 0.0.0.255 area 0`  
+`Router(config-router)network 192.168.40.0 0.0.0.255 area 0`</br></br>
+・ルータ:R3のOSPFルーティングの設定  
+`Router(config)router ospf1`  
+`Router(config-router)network 192.168.30.0 0.0.0.255 area 0`  
+`Router(config-router)network 192.168.50.0 0.0.0.255 area 0`
