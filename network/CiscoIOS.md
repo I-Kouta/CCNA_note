@@ -429,3 +429,17 @@ O:経路情報の情報源のものはOSPFエントリ。
 ---
 ### `VPN`
 *Virtual Private Network*の略で、仮想的なプライベートネットワーク接続のこと。企業の拠点間通信を実現できる。
+
+- IPSec-VPN(サイト間)の設定  
+・ISAKMPポリシーの設定  
+`(config)#crypto isakmp policy [priority]`  
+priority:1 ~ 10000で数値が小さいほど優先度が高い</br></br>
+・暗号化アルゴリズムの設定(デフォルト値はdes)  
+`(config-isakmp)#encryption [ des | 3des | aes 128 | aes 192 | aes 256 ]`</br></br>
+・ISAKMP SAで使用するハッシュアルゴリズムを設定(デフォルトはsha)  
+`(config-isakmp)#hash [ md5 | sha | sha256 | sha384 | sha512 ]`</br></br>
+・認証方式の設定  
+`(config-isakmp)#authentication [ rsa-sig | rsa-encr | pre-share ]`  
+rsa-sig:RSA署名  
+rsa-encr:RSA暗号化ナンス  
+pre-share:事前共有鍵
