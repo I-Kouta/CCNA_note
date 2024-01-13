@@ -323,7 +323,7 @@ Router0の設定
 *Network Address Translation*の略で、IPアドレスを変換する技術。  
 ・ローカルIPとグローバルIPの対応を設定  
 `(config)#ip nat [inside/outside] source static [local-ip][global-ip]`  
-inside / outside:対象の機器が内部 / 外部のどちらにあるか  
+inside / outside:対象の機器が内部 / 外部のどちらにあるか</br></br>
 ・内部インターフェイスを指定  
 `(config)#interface GigabitEthernet 0/0`  
 `(config-if)#ip nat inside`
@@ -349,3 +349,19 @@ inside / outside:対象の機器が内部 / 外部のどちらにあるか
 `RT-B(config)#ip nat inside`  
 `RT-B(config)#interface GigabitEthernet 0/1`  
 `RT-B(config)#ip nat outside`
+
+- PAT  
+*Port Address Translation*の略で、1つのIPアドレスを複数のコンピュータで共有する技術。企業や大学、自宅のLANからインターネット通信する時に使用している技術。  
+・IPアクセス制御リストを定義(拡張ACLも使える)  
+`(config)#access-list [number] permit [source] [wildcard]`  
+source:送信元IP</br></br>
+・ローカルIPとグローバルIPの対応を設定  
+`(config)#ip nat inside source list [number] interface [interface] overload`  
+number:ACLの番号  
+interface:外側インターフェイス</br></br>
+・内部インターフェイスを指定  
+`(config)#interface GigabitEthernet0/0`  
+`(config-if)#ip nat inside`</br></br>
+・外部インターフェイスを指定  
+`(config)#interface GigabitEthernet0/0`  
+`(config-if)#ip nat outside`
