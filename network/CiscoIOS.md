@@ -392,3 +392,12 @@ interface:外側インターフェイス</br></br>
 ・追加ライセンスが必要な場合があり、コンバージェンスは比較的早い  
 ・ルータが増えると負荷が増える  
 ・コスト計算にルータ間の通信速度が含まれる
+
+- OSPFの設定コマンド  
+・OSPFの有効化  
+`(config)#router ospf [process-id]`  
+process-id:OSPFルーティングプロセスをしきべつするためのID(1 ~ 65535)。  
+・OSPFで管理するネットワーク(インターフェイス)とエリアの指定  
+`(config-router)#network [address] [wildcard] area [area-id]`  
+address:ネットワークアドレスまたはインターフェイスのIPアドレスで指定  
+area-id:割り当てたいエリアを指定
