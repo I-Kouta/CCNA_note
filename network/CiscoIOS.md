@@ -315,3 +315,18 @@ Router0の設定
 `(config)#interface Vlan1`  
 `(config)#ip access-group 111 in` => 拡張ACLは送信元に近い方に適用  
 `(config-if)eit`
+
+---
+### `アドレス変換`
+
+- NAT  
+*Network Address Translation*の略で、IPアドレスを変換する技術。  
+・ローカルIPとグローバルIPの対応を設定  
+`(config)#ip nat [inside/outside] source static [local-ip][global-ip]`  
+inside / outside:対象の機器が内部 / 外部のどちらにあるか  
+・内部インターフェイスを指定  
+`(config)#interface GigabitEthernet 0/0`  
+`(config-if)#ip nat inside`
+・外部インターフェイスを指定  
+`(config)#interface GigabitEthernet 0/1`  
+`(config-if)#ip nat outside`
