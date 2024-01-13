@@ -384,3 +384,11 @@ interface:外側インターフェイス</br></br>
 `RT-B(config-if)#ip nat inside`
 `RT-B(config)#interface GigabitEthernet0/1`  
 `RT-B(config-if)#ip nat outside`
+
+---
+### `ルーティング(OSPF)`
+・*Open Shortest Path First*の略  
+・中(大)規模ネットワーク向け、リンクステート型  
+・追加ライセンスが必要な場合があり、コンバージェンスは比較的早い  
+・ルータが増えると負荷が増える  
+・コスト計算にルータ間の通信速度が含まれる
