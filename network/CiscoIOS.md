@@ -455,3 +455,19 @@ Transform2:認証</br></br>
 ・ISPec通信モードの指定  
 `(cfg-crypto-trans)#mode [tunnel | transport]`  
 デフォルト値：tunnel
+
+- マップ関連設定  
+・暗号マップの定義  
+`(config)#crypto map [map-name] [seq-number] ipsec-isakmp`  
+`(config-crypto-map)#match address [acl-number]`  
+`(config-crypto-map)#set transform-set [name]`  
+`(config-crypto-map)#set peer [address]`  
+map-name:暗号マップの名前  
+seq-number:番号(小さい値ほど優先度が高くなる)  
+acl-number:IPsec対象雨を定義したACL  
+name:定義済みのトランスフォーム名  
+address:IPsecピアのアドレス</br></br>
+・暗号マップのインターフェイスへの適用  
+`(config)#interface [interface-id]`  
+`(config-if)#crypto map [crypto-map-name]`  
+crypto-map-name:暗号マップを定義したマップ名
