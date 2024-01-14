@@ -525,3 +525,31 @@ on:static</br></br>
 `(config-if)#switchport trunk encapsulation dot1q` ※機種によって省略可(トランクリンクの設定)  
 `(config-if)#switchport trunk allowed vlan [vlan-id],[vlan-id], …`  
 `(config-if)#switchport mode trunk`
+
+- イーサチャネルの設定例
+
+<img width="500" alt="" src="./images/イーサチャネル設定.png">
+
+・SW1の設定(SW2は省略)  
+`>enable`  
+`#configure terminal`</br></br>
+`(config)#interface range GigabitEthernet0/1-2`  
+`(config-if-range)#channel-group 1 mode active`  
+`(config-if-range)#exit` => イーサチャネルの設定</br></br>
+`(config)#interface port-channel 1`  
+`(config-if)#switchport trunk allowed vlan 10,20`  
+`(config-if)#switchport mode trunk`  
+`(config-if)#no shutdown`  
+`(config-if)#end` => VLANを割り当て</br></br>
+・SW3の設定  
+`>enable`  
+`#configure terminal`</br></br>
+`(config)#interface range GigabitEthernet1/0/1-2`  
+`(config-if-range)#channel-group 1 mode active`  
+`(config-if-range)#exit` => イーサチャネルの設定(2箇所行う)</br></br>
+`(config)#interface port-channel 1`  
+`(config-if)#switchport trunk encapsulation dot1q`  
+`(config-if)#switchport trunk allowed vlan 10,20`  
+`(config-if)#switchport mode trunk`  
+`(config-if)#no shutdown`  
+`(config-if)#exit` => 2箇所行う
