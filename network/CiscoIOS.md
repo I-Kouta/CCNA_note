@@ -471,3 +471,33 @@ address:IPsecピアのアドレス</br></br>
 `(config)#interface [interface-id]`  
 `(config-if)#crypto map [crypto-map-name]`  
 crypto-map-name:暗号マップを定義したマップ名
+
+- IPSec-VPN(サイト間)の設定例
+
+<img width="500" alt="" src="./images/VPN.png">
+
+ルータ:RT-Aの設定(Bは省略)  
+`RT-A(config)#access-list 101 permit ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255` => ※VPN用  
+`RT-A(config)#access-list 102 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255`  
+`RT-A(config)#access-list 102 permit ip 192.168.10.0 0.0.0.255 any` => ※PAT用</br></br>
+・IPSec-VPN(サイト間)の設定  
+`RT-A(config)#crypto isakmp policy 1`  
+`RT-A(config-isakmp)#encryption 3des`  
+`RT-A(config-isakmp)#hash md5`  
+`RT-A(config-isakmp)#authentication pre-share`  
+`RT-A(config-isakmp)#group 2`  
+`RT-A(config-isakmp)#exit`</br></br>
+・パスワード、モードの設定  
+`RT-A(config)#crypto isakmp key cisco address 120.20.20.1`  
+`RT-A(config)#crypto ipsec transform-set IPSEC esp-3des esp-md5-hmac`  
+`RT-A(cfg-crypto-trans)#mode tunnel`  
+`RT-A(cfg-crypto-trans)#exit`</br></br>
+・暗号マップの定義  
+`RT-A(config)#crypto map M-ipsec 1 ipsec-isakmp`  
+`RT-A(config-crypto-map)#set peer 120.20.20.1`  
+`RT-A(config-crypto-map)#set transform-set IPSEC`  
+`RT-A(config-crypto-map)#match address 101`  
+`RT-A(config-crypto-map)#exit`</br></br>
+・暗号マップのインターフェイスへの適用 
+`RT-A(config)#interface GigabitEthernet 0/1`  
+`RT-A(config-if)#crypto map M-ipsec`
