@@ -443,3 +443,15 @@ priority:1 ~ 10000で数値が小さいほど優先度が高い</br></br>
 rsa-sig:RSA署名  
 rsa-encr:RSA暗号化ナンス  
 pre-share:事前共有鍵
+
+- パスワードやモードの設定  
+・事前共有鍵のピアアドレスとパスワード設定  
+`(config)#crypto isakmp key [password] address [address]`</br></br>
+・トランスフォームセットの定義  
+`(config)#crypto ipsec transform-set [name] [transform1] [transform2]`  
+name:名前  
+Transform1:暗号化  
+Transform2:認証</br></br>
+・ISPec通信モードの指定  
+`(cfg-crypto-trans)#mode [tunnel | transport]`  
+デフォルト値：tunnel
