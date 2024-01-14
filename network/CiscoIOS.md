@@ -501,3 +501,27 @@ crypto-map-name:暗号マップを定義したマップ名
 ・暗号マップのインターフェイスへの適用 
 `RT-A(config)#interface GigabitEthernet 0/1`  
 `RT-A(config-if)#crypto map M-ipsec`
+
+---
+### `イーサチャネル(リンクアグリゲーション)`
+・複数のポート(その間のケーブル)接続を1つ(本)での接続とみなす  
+・性能や信頼性を向上させる冗長化技術  
+・対向機器と合うように設定を行う必要がある
+
+- イーサチャネルの設定コマンド  
+・イーサチャネルの設定  
+`(config)#interface range [interface-id, …]`  
+`(config-if-range)#switchport` ※デフォルトなので省略可  
+`(config-if-range)#channel-group [group-number] mode [desirable | auto | active | passive | on]`  
+`(config-if-range)#no shutdown` ※デフォルトなので省略可  
+interface-id:インターフェイス  
+group-number:イーサチャネルのグループ番号  
+desirable | auto:PAgP  
+active | passive:LACP  
+on:static</br></br>
+・イーサネットの設定後にVLANを割り当て  
+`(config)#interface port-channel [group-number]`  
+`(config-if)#switchport` ※デフォルトなので省略可  
+`(config-if)#switchport trunk encapsulation dot1q` ※機種によって省略可(トランクリンクの設定)  
+`(config-if)#switchport trunk allowed vlan [vlan-id],[vlan-id], …`  
+`(config-if)#switchport mode trunk`
